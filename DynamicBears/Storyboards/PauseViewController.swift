@@ -12,23 +12,32 @@ class PauseViewController: UIViewController {
 
     @IBAction func goBackToStart(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateInitialViewController() as! UIViewController
-        
+        let controller = storyboard.instantiateViewController(withIdentifier: "mainstart") as UIViewController
+        SessionController.newGame()
         self.present(controller, animated: false, completion: nil)
-        
-        
+        SessionController.score=0
+        SessionController.lives=3
         
     }
-
-    @IBOutlet weak var ScoreFirstLabel: UILabel!
+    @IBAction func restartGame(_ sender: Any) {
+        SessionController.newGame()
+        let storyboard = UIStoryboard(name: "CardViewer", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "CardViewerController") as UIViewController
+        self.present(controller, animated: false, completion: nil)
+        
+        SessionController.score = 0
+        SessionController.lives = 3
+    }
+    
+    
     @IBOutlet weak var scoreLabel: UILabel!
     override func viewDidLoad() {
         scoreLabel.text = SessionController.score.description
         super.viewDidLoad()
-//        scoreLabel.text = SessionController.score.description
+        //        scoreLabel.text = SessionController.score.description
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func buttonPressed(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
@@ -40,14 +49,5 @@ class PauseViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -9,18 +9,36 @@
 import UIKit
 
 class GameOverViewController: UIViewController {
-
+    @IBAction func retryButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "CardViewer", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "CardViewerController") as UIViewController
+        
+        self.present(controller, animated: false, completion: nil)
+        SessionController.score = 0
+        SessionController.lives = 3
+        SessionController.newGame()
+        
+        
+        
+        
+    }
+    @IBOutlet weak var scoreofMatch: UILabel!
+    @IBAction func goOnTheMainStoryBoard(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "mainstart") as UIViewController
+        self.present(controller, animated: false, completion: nil)
+        SessionController.score = 0
+        SessionController.newGame()
+        SessionController.lives = 3
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scoreofMatch.text! = SessionController.score.description
+        
+        
+        
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

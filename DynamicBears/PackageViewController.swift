@@ -18,7 +18,7 @@ class PackageViewController: UIViewController {
     @IBOutlet weak var studentsCheckButton: UIButton!
     @IBOutlet weak var letsGoButton: UIButton!
     let whatPackage : [String] = [ "You have selected the mentors package","You have selected the students package","You have selected the students and mentors package","No package included" ]
-
+    
     @IBAction func verifiedButton(_ sender: Any) {
         studentsCheckButton.setImage(images[countIm % images.count], for: .normal)
         notification.notificationOccurred(.success) //haptic feedback
@@ -32,12 +32,12 @@ class PackageViewController: UIViewController {
         }
         
         if countIm < images.count-1{
-           countIm=countIm+1
+            countIm=countIm+1
         }else{
             countIm = 0
-            }
-        self.checkPackages()
         }
+        self.checkPackages()
+    }
     
     @IBAction func verifiedButtonMentors(_ sender: Any) {
         mentorsCheckButton.setImage(images[countIm2 % images.count], for: .normal)
@@ -74,11 +74,11 @@ class PackageViewController: UIViewController {
         }
     }
     
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.letsGoButton.alpha = 0
