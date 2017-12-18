@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  AcademyViewController.swift
 //  DynamicBears
 //
 //  Created by Ciro Sannino on 18/12/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class AcademyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

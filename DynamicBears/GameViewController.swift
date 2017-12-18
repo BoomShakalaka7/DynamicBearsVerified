@@ -27,28 +27,34 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         scrollView.delegate = self
-
-
+        
+        
+        
         selectedCardsMaybe = CardController.getCardsNewLevel()
         if selectedCardsMaybe == nil {
+            let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "gameOver") as UIViewController
+            self.present(controller, animated: false, completion: nil)
             //SEGUE TO END SCREEN PRINT SCORE
+            
             print("ERROR RETRIEVING CARDS")
         }
+        
         selectedCards = selectedCardsMaybe!
-       
+        
         pageControl.numberOfPages = selectedCards.count
-//        pageControl.currentPage = (SessionController.level - 1) * 3 
+        //        pageControl.currentPage = (SessionController.level - 1) * 3
         var index = 0
         
         for card in selectedCards {
             let xCoordinate = view.frame.midX + view.frame.width * CGFloat(index)
             contentWidth += view.frame.width
-
+            
             
             //Shadow
-//            let shadow = UIImageView(image: #imageLiteral(resourceName: "cardShadow"))
-//            shadow.frame = CGRect(x: xCoordinate-187.5, y: (view.frame.height/2)-333, width: 375, height: 520)
-//            scrollView.addSubview(shadow)
+            //            let shadow = UIImageView(image: #imageLiteral(resourceName: "cardShadow"))
+            //            shadow.frame = CGRect(x: xCoordinate-187.5, y: (view.frame.height/2)-333, width: 375, height: 520)
+            //            scrollView.addSubview(shadow)
             
             //Image
             let imageToDisplay = card.photo
@@ -64,7 +70,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             gradient.clipsToBounds = true
             gradient.layer.cornerRadius = 15
             imageView.addSubview(gradient)
-
+            
             
             // Name and surname label
             let nameLabel = UILabel(frame: CGRect(x: 28, y: 418, width: 320, height: 30))
@@ -74,7 +80,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             imageView.addSubview(nameLabel)
             labels.append(nameLabel)
             
-
+            
             
             // Job label
             let jobLabel = UILabel(frame: CGRect(x: 28, y: 455, width: 320, height: 30))
@@ -83,7 +89,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             jobLabel.text = card.description
             imageView.addSubview(jobLabel)
             labels.append(jobLabel)
-
+            
             
             index = index+1
         }
@@ -92,16 +98,16 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(375))
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-       
+        
     }
     
     @IBAction func pauseButton(_ sender: Any) {
-//        self.performSegue(withIdentifier: "pauseVC", sender: self)
+        //        self.performSegue(withIdentifier: "pauseVC", sender: self)
         
         let storyboard = UIStoryboard(name: "Pause", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as UIViewController
@@ -117,8 +123,8 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         self.present(controller, animated: false, completion: nil)
         
         
-       
-        }
+        
+    }
     }
     
 //    var score  : Score = Score(userName: SessionController.userName!, score: 0, scoreType: 0)
