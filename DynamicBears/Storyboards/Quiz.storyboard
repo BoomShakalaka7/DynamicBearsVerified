@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Quiz View Controller-->
         <scene sceneID="5vY-iJ-8yb">
@@ -45,8 +50,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggy-68-a3d">
                                 <rect key="frame" x="98" y="601" width="178" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" backgroundImage="playBg">
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <state key="normal" title="CHOOSE" backgroundImage="Small Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -86,9 +91,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Small Button" width="178" height="56"/>
         <image name="heartfull" width="30" height="27"/>
         <image name="like-heart-symbol-of-ios-7-interface_318-36651" width="30" height="27"/>
         <image name="pauseButton" width="23" height="28"/>
-        <image name="playBg" width="178" height="56"/>
     </resources>
 </document>

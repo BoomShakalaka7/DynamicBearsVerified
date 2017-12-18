@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Menu-->
         <scene sceneID="Gmb-fE-VRX">
@@ -21,8 +29,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLc-23-YgY">
                                 <rect key="frame" x="98" y="334" width="178" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <state key="normal" backgroundImage="START">
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <state key="normal" title="START" backgroundImage="Small Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -32,8 +40,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duy-9F-rtd">
                                 <rect key="frame" x="98" y="418" width="178" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <state key="normal" backgroundImage="CATEGORY">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="CATEGORY" backgroundImage="Small Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -41,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-gR-aIH">
-                                <rect key="frame" x="322" y="80" width="38" height="38"/>
+                                <rect key="frame" x="321" y="609" width="38" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" backgroundImage="Search"/>
@@ -52,14 +60,18 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiA-Uo-3oK">
                                 <rect key="frame" x="98" y="499" width="178" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <state key="normal" backgroundImage="START">
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <state key="normal" title="CREDITS" backgroundImage="Small Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="creditsButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="xm2-3n-gcH"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="8XG-jD-KHW">
+                                <rect key="frame" x="86" y="78" width="203" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Ok-H1-g7p"/>
@@ -105,38 +117,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StudentsButtonImage" translatesAutoresizingMaskIntoConstraints="NO" id="fob-fv-WbJ" userLabel="studentsImage">
-                                <rect key="frame" x="16" y="95" width="355" height="230"/>
+                                <rect key="frame" x="22" y="118" width="331" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MentorsButtonImage" translatesAutoresizingMaskIntoConstraints="NO" id="22I-78-6uY">
-                                <rect key="frame" x="16" y="340" width="355" height="230"/>
+                                <rect key="frame" x="16" y="340" width="340" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJ8-1G-ctd" userLabel="studentsCheckButton">
-                                <rect key="frame" x="314" y="102" width="45" height="45"/>
+                                <rect key="frame" x="13" y="104" width="347" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add"/>
                                 <connections>
                                     <action selector="verifiedButton:" destination="smI-zd-EPv" eventType="touchUpInside" id="LIY-N7-9b3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYx-7e-cD6" userLabel="mentorsCheckButton">
-                                <rect key="frame" x="315" y="347" width="45" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="add"/>
-                                <connections>
-                                    <action selector="verifiedButtonMentors:" destination="smI-zd-EPv" eventType="touchUpInside" id="eFB-ZV-mvP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwL-dP-uya">
                                 <rect key="frame" x="98" y="584" width="178" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <state key="normal" title=" " backgroundImage="OK">
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <state key="normal" title=" OK" backgroundImage="Small Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="letsGoButton:" destination="smI-zd-EPv" eventType="touchUpInside" id="dyT-ln-Dki"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYx-7e-cD6" userLabel="mentorsCheckButton">
+                                <rect key="frame" x="14" y="325" width="347" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="verifiedButtonMentors:" destination="smI-zd-EPv" eventType="touchUpInside" id="eFB-ZV-mvP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7i8-b8-tUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1332" y="-987"/>
+            <point key="canvasLocation" x="1332" y="-987.25637181409309"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2bg-Ox-51s">
@@ -276,13 +288,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CATEGORY" width="178" height="56"/>
         <image name="Developers" width="375" height="667"/>
-        <image name="MentorsButtonImage" width="356" height="231"/>
-        <image name="OK" width="178" height="56"/>
-        <image name="START" width="178" height="56"/>
+        <image name="Logo" width="203" height="169"/>
+        <image name="MentorsButtonImage" width="332" height="166"/>
         <image name="Search" width="28" height="29"/>
-        <image name="StudentsButtonImage" width="357" height="232"/>
-        <image name="add" width="512" height="512"/>
+        <image name="Small Button" width="178" height="56"/>
+        <image name="StudentsButtonImage" width="335" height="170"/>
+        <image name="add" width="348" height="200"/>
     </resources>
 </document>
