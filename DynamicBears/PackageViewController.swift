@@ -9,6 +9,8 @@
 import UIKit
 
 class PackageViewController: UIViewController {
+   let notification = UINotificationFeedbackGenerator() //haptic feedback
+    
     let images : [UIImage] = [#imageLiteral(resourceName: "ok"),#imageLiteral(resourceName: "add")]
     var countIm : Int = 0
     var countIm2 : Int = 0
@@ -19,6 +21,7 @@ class PackageViewController: UIViewController {
 
     @IBAction func verifiedButton(_ sender: Any) {
         studentsCheckButton.setImage(images[countIm % images.count], for: .normal)
+        notification.notificationOccurred(.success) //haptic feedback
         self.checkPackages()
         if countIm == 0 {
             print("Students pack selected!")
@@ -38,7 +41,7 @@ class PackageViewController: UIViewController {
     
     @IBAction func verifiedButtonMentors(_ sender: Any) {
         mentorsCheckButton.setImage(images[countIm2 % images.count], for: .normal)
-        
+        notification.notificationOccurred(.success) //haptic feedback
         if countIm2 == 0 {
             print("Mentors pack selected!")
         }else{

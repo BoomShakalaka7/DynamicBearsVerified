@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLc-23-YgY">
-                                <rect key="frame" x="98" y="334" width="178" height="56"/>
+                                <rect key="frame" x="98" y="336" width="178" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                 <state key="normal" title="START" backgroundImage="Small Button">
@@ -48,15 +48,6 @@
                                     <segue destination="smI-zd-EPv" kind="show" identifier="categoryVC" id="wG4-q9-lCs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-gR-aIH">
-                                <rect key="frame" x="321" y="609" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" backgroundImage="Search"/>
-                                <connections>
-                                    <action selector="searchButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="S4v-B8-s8x"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiA-Uo-3oK">
                                 <rect key="frame" x="98" y="499" width="178" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -72,6 +63,15 @@
                                 <rect key="frame" x="86" y="78" width="203" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-gR-aIH">
+                                <rect key="frame" x="331" y="620" width="28" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" backgroundImage="Search"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="S4v-B8-s8x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Ok-H1-g7p"/>
@@ -129,7 +129,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add"/>
                                 <connections>
-                                    <action selector="verifiedButton:" destination="smI-zd-EPv" eventType="touchUpInside" id="LIY-N7-9b3"/>
+                                    <action selector="verifiedButton:" destination="smI-zd-EPv" eventType="touchDown" id="oPc-id-FNZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwL-dP-uya">
@@ -148,7 +148,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add"/>
                                 <connections>
-                                    <action selector="verifiedButtonMentors:" destination="smI-zd-EPv" eventType="touchUpInside" id="eFB-ZV-mvP"/>
+                                    <action selector="verifiedButtonMentors:" destination="smI-zd-EPv" eventType="touchDown" id="RtA-Kl-J74"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -291,7 +291,7 @@
         <image name="Developers" width="375" height="667"/>
         <image name="Logo" width="203" height="169"/>
         <image name="MentorsButtonImage" width="332" height="166"/>
-        <image name="Search" width="28" height="29"/>
+        <image name="Search" width="28" height="28"/>
         <image name="Small Button" width="178" height="56"/>
         <image name="StudentsButtonImage" width="335" height="170"/>
         <image name="add" width="348" height="200"/>
