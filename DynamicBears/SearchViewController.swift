@@ -26,6 +26,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         navigationItem.searchController = searchController
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = false
+        
         }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,6 +106,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         cell.textLabel!.text = card.name
         cell.detailTextLabel!.text = card.surname
         cell.imageView?.image = card.photo
+//        cell.imageView?.layer.cornerRadius = 10
+//        cell.imageView?.layer.masksToBounds = true
         return cell
     }
     
