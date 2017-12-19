@@ -124,19 +124,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLc-23-YgY">
-                                <rect key="frame" x="98" y="336" width="178" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
-                                <state key="normal" title="START" backgroundImage="Small Button">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="08y-lY-sn2"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duy-9F-rtd">
-                                <rect key="frame" x="98" y="418" width="178" height="56"/>
+                                <rect key="frame" x="98" y="455" width="178" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="CATEGORY" backgroundImage="Small Button">
@@ -146,23 +135,12 @@
                                     <segue destination="smI-zd-EPv" kind="show" identifier="categoryVC" id="wG4-q9-lCs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiA-Uo-3oK">
-                                <rect key="frame" x="98" y="499" width="178" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
-                                <state key="normal" title="CREDITS" backgroundImage="Small Button">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="creditsButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="xm2-3n-gcH"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="8XG-jD-KHW">
-                                <rect key="frame" x="86" y="78" width="203" height="169"/>
+                                <rect key="frame" x="86" y="88" width="203" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-gR-aIH">
-                                <rect key="frame" x="331" y="620" width="28" height="27"/>
+                                <rect key="frame" x="319" y="607" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" backgroundImage="Search"/>
@@ -178,6 +156,25 @@
                                     <action selector="InfoButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="BEa-WX-vvD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-6M-q1z">
+                                <rect key="frame" x="167" y="607" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="UserButton"/>
+                                <connections>
+                                    <segue destination="4W2-eT-H5A" kind="show" id="0k0-xF-v4a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLc-23-YgY">
+                                <rect key="frame" x="98" y="371" width="178" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <state key="normal" title="START" backgroundImage="Small Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="08y-lY-sn2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Ok-H1-g7p"/>
@@ -186,33 +183,11 @@
                     <connections>
                         <outlet property="startButton" destination="VLc-23-YgY" id="ace-ij-mYS"/>
                         <segue destination="oBr-mw-F5b" kind="show" identifier="searchView" id="V8Z-co-Z8l"/>
-                        <segue destination="6wo-4H-erm" kind="show" identifier="showCredits" id="EIM-82-Bnf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvw-gU-2uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-362" y="-1224"/>
-        </scene>
-        <!--Credits View Controller-->
-        <scene sceneID="zgE-0i-PSq">
-            <objects>
-                <viewController id="6wo-4H-erm" customClass="creditsViewController" customModule="DynamicBears" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2vR-Pc-Qr1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Developers" translatesAutoresizingMaskIntoConstraints="NO" id="QOI-1y-w4G">
-                                <rect key="frame" x="0.0" y="64" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Ky2-oO-DMc"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eJ8-LM-TEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-362" y="-409"/>
         </scene>
         <!--Package View Controller-->
         <scene sceneID="lFq-Bf-1f8">
@@ -394,13 +369,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Developers" width="375" height="667"/>
         <image name="Logo" width="203" height="169"/>
         <image name="MentorsButtonImage" width="332" height="166"/>
-        <image name="Search" width="28" height="28"/>
+        <image name="Search" width="42" height="42"/>
         <image name="Small Button" width="178" height="56"/>
         <image name="StudentsButtonImage" width="335" height="170"/>
+        <image name="UserButton" width="40" height="40"/>
         <image name="add" width="348" height="200"/>
-        <image name="info-button" width="56" height="56"/>
+        <image name="info-button" width="42" height="42"/>
     </resources>
 </document>

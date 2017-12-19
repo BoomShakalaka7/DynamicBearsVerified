@@ -22,6 +22,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-va-YmF">
+                                <rect key="frame" x="319" y="607" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="dynamicBears"/>
+                                <connections>
+                                    <segue destination="axU-Hx-BzM" kind="show" id="m0C-mh-FIq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Th4-jq-q9d"/>
@@ -31,8 +39,31 @@
             </objects>
             <point key="canvasLocation" x="450.39999999999998" y="410.64467766116945"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="7bJ-0b-Gbd">
+            <objects>
+                <viewController id="axU-Hx-BzM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CyP-85-KEn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Developers" translatesAutoresizingMaskIntoConstraints="NO" id="TXi-Rf-WUJ">
+                                <rect key="frame" x="0.0" y="67" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tI4-V5-dAE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oe2-aM-cor" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="410.64467766116945"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Developers" width="375" height="667"/>
         <image name="Howtoplay" width="375" height="667"/>
+        <image name="dynamicBears" width="40" height="40"/>
     </resources>
 </document>
