@@ -40,9 +40,9 @@
 		6BCEAD3C1FE1E93C007B88E8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD3B1FE1E93C007B88E8 /* SearchViewController.swift */; };
 		6BD75F9D1FE5857E00586920 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD75F9C1FE5857E00586920 /* GameOverViewController.swift */; };
 		E32943241FE95E4B00EDD2AF /* Students.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E32943231FE95E4B00EDD2AF /* Students.bundle */; };
-		E3D0891D1FE9615500228544 /* Mentors.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3D0891C1FE9615500228544 /* Mentors.bundle */; };
 		E3D0E13D1FE9262200E5CC15 /* InfoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D0E13C1FE9262200E5CC15 /* InfoScreen.storyboard */; };
 		E3D0E1411FE932C000E5CC15 /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0E1401FE932C000E5CC15 /* InfoScreenViewController.swift */; };
+		E3FC88501FE9628E00A33416 /* Mentors.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3FC884F1FE9628E00A33416 /* Mentors.bundle */; };
 		F42E07171FDFEA4C00E77F8E /* Pause.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42E07161FDFEA4C00E77F8E /* Pause.storyboard */; };
 		F42E07191FDFEB5A00E77F8E /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E07181FDFEB5A00E77F8E /* PauseViewController.swift */; };
 		F4FD9D751FDE9CAE00A03A85 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD9D741FDE9CAE00A03A85 /* SessionController.swift */; };
@@ -106,9 +106,9 @@
 		6BCEAD3B1FE1E93C007B88E8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6BD75F9C1FE5857E00586920 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		E32943231FE95E4B00EDD2AF /* Students.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Students.bundle; sourceTree = "<group>"; };
-		E3D0891C1FE9615500228544 /* Mentors.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Mentors.bundle; sourceTree = "<group>"; };
 		E3D0E13C1FE9262200E5CC15 /* InfoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoScreen.storyboard; sourceTree = "<group>"; };
 		E3D0E1401FE932C000E5CC15 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
+		E3FC884F1FE9628E00A33416 /* Mentors.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Mentors.bundle; sourceTree = "<group>"; };
 		F42E07161FDFEA4C00E77F8E /* Pause.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pause.storyboard; sourceTree = "<group>"; };
 		F42E07181FDFEB5A00E77F8E /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PauseViewController.swift; path = Storyboards/PauseViewController.swift; sourceTree = "<group>"; };
 		F4FD9D741FDE9CAE00A03A85 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 				6B44DBF71FD5C7C40094892C /* GameViewController.swift */,
 				6B95C00F1FD8181A00CB7698 /* PackageViewController.swift */,
 				1DF9CF291FE4274E004A40DB /* creditsViewController.swift */,
-				E3D0891C1FE9615500228544 /* Mentors.bundle */,
+				E3FC884F1FE9628E00A33416 /* Mentors.bundle */,
 				E32943231FE95E4B00EDD2AF /* Students.bundle */,
 				6B3F33821FDFE4660054F7F3 /* Storyboards */,
 				4CCD154E1FDEEA2E006B04C3 /* Helpers */,
@@ -388,7 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D0891D1FE9615500228544 /* Mentors.bundle in Resources */,
+				E3FC88501FE9628E00A33416 /* Mentors.bundle in Resources */,
 				1DA38D8A1FE8449800AF8DA7 /* GameOver.storyboard in Resources */,
 				6B3F33811FDFE4460054F7F3 /* CardViewer.storyboard in Resources */,
 				6B4FB37B1FD55FF900776367 /* LaunchScreen.storyboard in Resources */,
