@@ -49,6 +49,14 @@ class PauseViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
         
+        if Singleton.shared.resumeTapped == false {
+            Singleton.shared.timer.invalidate()
+            Singleton.shared.resumeTapped = true
+        } else {
+            Singleton.shared.runTimer()
+            Singleton.shared.resumeTapped = false
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

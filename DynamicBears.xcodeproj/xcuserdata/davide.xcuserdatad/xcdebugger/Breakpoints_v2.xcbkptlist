@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DynamicBears/Singleton.swift"
-            timestampString = "535132710.57504"
+            timestampString = "535381669.783706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "Singleton"
             landmarkType = "3">
          </BreakpointContent>
