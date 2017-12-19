@@ -29,10 +29,13 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     var nameLabel = UILabel()
     
     
+    
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         scrollView.delegate = self
-        timeLabel.isHidden=true
+        Singleton.shared.runTimer()
+        
         lives = [heart0, heart1, heart2]
         if SessionController.lives == 3 {
             print("You have all lives")
@@ -124,8 +127,18 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
         
     }
     
+    
+   
+    
     @IBAction func pauseButton(_ sender: Any) {
-        //        self.performSegue(withIdentifier: "pauseVC", sender: self)
+
+        if Singleton.shared.resumeTapped == false {
+            Singleton.shared.timer.invalidate()
+            Singleton.shared.resumeTapped = true
+        } else {
+            Singleton.shared.runTimer()
+            Singleton.shared.resumeTapped = false
+        }
         
         let storyboard = UIStoryboard(name: "Pause", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as UIViewController
@@ -210,6 +223,10 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
         }
         
     }
+    
+//    public func updateTimerino(label: inout Int) {
+//        timeLabel.text = String(label)
+//    }
 }
 
 //        else {

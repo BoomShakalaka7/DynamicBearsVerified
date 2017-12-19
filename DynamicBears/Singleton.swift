@@ -10,15 +10,20 @@ import UIKit
 
  class Singleton {
     static let shared = Singleton()
-    
+
     var mentorsList : [Card] = []
     var studentsList : [Card] = []
     var cardsList: [Card] = []
+    
+//    timer 
+    var seconds = 30
+    var timer = Timer()
+    var isTimerRunning = false
+    var resumeTapped = false
 
 //    var mentorCardListCompressed: [Card] = []
 //    var studentCardListCompressed: [Card] = []
 //    var cardListCompressed: [Card] = []
-    
     
     func initialize() {
 
@@ -46,6 +51,16 @@ import UIKit
         }
         return cards
     }
+    
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer() {
+        seconds -= 1
+//        QuizViewController.updateTimerino(&seconds)
+    }
+    
     
 //    func loadResizedArray() {
 //        for i in 0..<studentsList.count {
