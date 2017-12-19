@@ -125,6 +125,10 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
         
     }
+    override var prefersStatusBarHidden: Bool
+        {
+        return true
+    }
     }
     
 //    var score  : Score = Score(userName: SessionController.userName!, score: 0, scoreType: 0)

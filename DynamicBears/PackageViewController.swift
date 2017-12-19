@@ -118,4 +118,8 @@ class PackageViewController: UIViewController {
             self.letsGoButton.alpha = 1
         })
     }
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
 }
