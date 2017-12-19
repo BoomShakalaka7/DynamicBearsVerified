@@ -223,6 +223,10 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
         }
         
     }
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
     
 //    public func updateTimerino(label: inout Int) {
 //        timeLabel.text = String(label)
