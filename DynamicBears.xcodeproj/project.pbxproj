@@ -41,6 +41,8 @@
 		6BD75F9D1FE5857E00586920 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD75F9C1FE5857E00586920 /* GameOverViewController.swift */; };
 		E3B061151FE8165A000A5B10 /* Mentors.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3B061141FE8165A000A5B10 /* Mentors.bundle */; };
 		E3B061171FE8167B000A5B10 /* Students.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3B061161FE8167B000A5B10 /* Students.bundle */; };
+		E3D0E13D1FE9262200E5CC15 /* InfoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D0E13C1FE9262200E5CC15 /* InfoScreen.storyboard */; };
+		E3D0E1411FE932C000E5CC15 /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0E1401FE932C000E5CC15 /* InfoScreenViewController.swift */; };
 		F42E07171FDFEA4C00E77F8E /* Pause.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42E07161FDFEA4C00E77F8E /* Pause.storyboard */; };
 		F42E07191FDFEB5A00E77F8E /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E07181FDFEB5A00E77F8E /* PauseViewController.swift */; };
 		F4FD9D751FDE9CAE00A03A85 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD9D741FDE9CAE00A03A85 /* SessionController.swift */; };
@@ -105,6 +107,8 @@
 		6BD75F9C1FE5857E00586920 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		E3B061141FE8165A000A5B10 /* Mentors.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Mentors.bundle; sourceTree = "<group>"; };
 		E3B061161FE8167B000A5B10 /* Students.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Students.bundle; sourceTree = "<group>"; };
+		E3D0E13C1FE9262200E5CC15 /* InfoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoScreen.storyboard; sourceTree = "<group>"; };
+		E3D0E1401FE932C000E5CC15 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
 		F42E07161FDFEA4C00E77F8E /* Pause.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pause.storyboard; sourceTree = "<group>"; };
 		F42E07181FDFEB5A00E77F8E /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PauseViewController.swift; path = Storyboards/PauseViewController.swift; sourceTree = "<group>"; };
 		F4FD9D741FDE9CAE00A03A85 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				6B4FB3791FD55FF900776367 /* LaunchScreen.storyboard */,
 				6B4FB3741FD55FF900776367 /* Main.storyboard */,
 				4CA247141FE3BD7D00494A63 /* Quiz.storyboard */,
+				E3D0E13C1FE9262200E5CC15 /* InfoScreen.storyboard */,
 				6B3F33801FDFE4460054F7F3 /* CardViewer.storyboard */,
 				F42E07161FDFEA4C00E77F8E /* Pause.storyboard */,
 			);
@@ -236,6 +241,7 @@
 				6B04D00A1FE3C989004FACE7 /* LaunchScreenViewController.swift */,
 				6BCEAD3B1FE1E93C007B88E8 /* SearchViewController.swift */,
 				6B95C0131FD82CEA00CB7698 /* Singleton.swift */,
+				E3D0E1401FE932C000E5CC15 /* InfoScreenViewController.swift */,
 				6BCD56C11FD5644D00701F00 /* StartScreenViewController.swift */,
 				F42E07181FDFEB5A00E77F8E /* PauseViewController.swift */,
 				1D1DB93B1FE8592700CE1F56 /* ProfileViewController.swift */,
@@ -390,6 +396,7 @@
 				6B4FB3781FD55FF900776367 /* Assets.xcassets in Resources */,
 				4CA247151FE3BD7D00494A63 /* Quiz.storyboard in Resources */,
 				6B4FB3761FD55FF900776367 /* Main.storyboard in Resources */,
+				E3D0E13D1FE9262200E5CC15 /* InfoScreen.storyboard in Resources */,
 				F42E07171FDFEA4C00E77F8E /* Pause.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +427,7 @@
 				6BB1A5A11FE5216200423D5D /* DetailViewController.swift in Sources */,
 				6B4FB3711FD55FF900776367 /* AppDelegate.swift in Sources */,
 				6BCEAD3C1FE1E93C007B88E8 /* SearchViewController.swift in Sources */,
+				E3D0E1411FE932C000E5CC15 /* InfoScreenViewController.swift in Sources */,
 				4C6641FE1FE01C33007A0BB9 /* ImagesHelper.swift in Sources */,
 				4C9E8BF41FDD5E9800B1621B /* ScoreController.swift in Sources */,
 				6B95C0101FD8181A00CB7698 /* PackageViewController.swift in Sources */,
@@ -613,7 +621,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.DynamicBearsLucas;
+				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.DynamicBearsLucass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -631,7 +639,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.DynamicBearsLucas;
+				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.DynamicBearsLucass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

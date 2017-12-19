@@ -54,6 +54,13 @@ override func viewDidLoad() {
         performSegue(withIdentifier: "showCredits", sender: self)
     }
     
+    @IBAction func InfoButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "InfoScreen", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "InfoScreenViewController") as UIViewController
+//        let navi = UINavigationController(rootViewController: controller)
+//        navigationController?.pushViewController(navi, animated: true)
+       
+        self.present(controller, animated: true, completion: nil)    }
     
     //    @IBAction func categoryButton(_ sender: Any) {
     //            self.performSegue(withIdentifier: "categoryVC", sender: self)

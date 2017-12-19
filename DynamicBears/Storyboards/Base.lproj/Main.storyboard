@@ -170,6 +170,14 @@
                                     <action selector="searchButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="S4v-B8-s8x"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmj-J9-YPp">
+                                <rect key="frame" x="16" y="607" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="info-button"/>
+                                <connections>
+                                    <action selector="InfoButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="BEa-WX-vvD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Ok-H1-g7p"/>
@@ -286,7 +294,6 @@
         <!--Search-->
         <scene sceneID="LKd-8n-wOd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CiT-QN-Vk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="oBr-mw-F5b" customClass="SearchViewController" customModule="DynamicBears" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CRf-fd-58L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -343,6 +350,7 @@
                         <segue destination="V8T-ca-AAN" kind="show" identifier="detailVC" id="nvb-K2-2oI"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CiT-QN-Vk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="921" y="-1225"/>
         </scene>
@@ -393,5 +401,6 @@
         <image name="Small Button" width="178" height="56"/>
         <image name="StudentsButtonImage" width="335" height="170"/>
         <image name="add" width="348" height="200"/>
+        <image name="info-button" width="56" height="56"/>
     </resources>
 </document>
