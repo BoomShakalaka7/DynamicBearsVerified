@@ -19,8 +19,11 @@ public class SessionController {
     }
     
     
-    public static var packetType = PacketType.StudentsAndMentors
+    public static var packetType = PacketType.Mentors
+
     
+    
+
     
     public static var score = 0
     

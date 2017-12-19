@@ -22,61 +22,60 @@ class PackageViewController: UIViewController {
     @IBAction func verifiedButton(_ sender: Any) {
         studentsCheckButton.setImage(images[countIm % images.count], for: .normal)
         notification.notificationOccurred(.success) //haptic feedback
-        self.checkPackages()
-        if countIm == 0 {
+        countIm+=1
+        if countIm == 1 {
             print("Students pack selected!")
+            self.displayButton()
             
         }else{
             print("Students pack deselected!")
             
         }
         
-        if countIm < images.count-1{
-            countIm=countIm+1
-        }else{
-            countIm = 0
+        if countIm >= images.count{
+          countIm = 0
         }
-        self.checkPackages()
+        
     }
     
     @IBAction func verifiedButtonMentors(_ sender: Any) {
         mentorsCheckButton.setImage(images[countIm2 % images.count], for: .normal)
         notification.notificationOccurred(.success) //haptic feedback
-        if countIm2 == 0 {
+        countIm2+=1
+        if countIm2 == 1 {
             print("Mentors pack selected!")
+            self.displayButton()
         }else{
             print("Mentors pack deselected!")
             
         }
-        if countIm2 < images.count-1{
-            countIm2=countIm2+1
-        }else{
-            countIm2 = 0
-        }
-        self.checkPackages()
+        if countIm2 >= images.count{
+            countIm2=0
+       }
     }
-    func checkPackages(){
-        if countIm == 0 && countIm2 == 1 {
-            print("\(whatPackage[0])")
-            SessionController.packetType = SessionController.PacketType.Mentors
-            self.displayButton()
-        }else if countIm2 == 0 && countIm == 1 {
-            print("\(whatPackage[1])")
-            SessionController.packetType = SessionController.PacketType.Students
-            self.displayButton()
-        }else if countIm == 1 && countIm2 == 1 {
-            print("\(whatPackage[2])")
-            SessionController.packetType = SessionController.PacketType.StudentsAndMentors
-            self.displayButton()
-        } else if countIm == 0 && countIm2 == 0 {
-            print("\(whatPackage[3])")
-            self.hideButton()
+   func checkPackages()->e{
+        if countIm==1 {
+            SessionController.packetType=SessionController.PacketType.Students
+        }else{
+            SessionController.packetType=SessionController.PacketType.Mentors
         }
+            
+        if countIm2==1{
+            SessionController.packetType=SessionController.PacketType.Mentors
+        
+        }else{
+            SessionController.packetType=SessionController.PacketType.Students
+        }
+    
+        
+    
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkPackages()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,6 +95,9 @@ class PackageViewController: UIViewController {
     }
     
     @IBAction func letsGoButton(_ sender: Any) {
+        print("\(countIm)")
+            print("\(countIm2)")
+        checkPackages()
         UIView.animate(withDuration: 0.5, animations: {
             self.letsGoButton.alpha = 0
             self.studentsCheckButton.alpha = 0

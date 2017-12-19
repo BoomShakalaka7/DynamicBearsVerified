@@ -13,7 +13,6 @@ class StartScreenViewController: UIViewController {
     
 override func viewDidLoad() {
         super.viewDidLoad()
-        SessionController.newGame()
         
         let cards = CardData.getAllCards()
         

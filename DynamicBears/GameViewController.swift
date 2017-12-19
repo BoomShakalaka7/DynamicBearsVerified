@@ -28,7 +28,6 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         scrollView.delegate = self
-        
 //        make play button hide
         playButton.isHidden = true
         
