@@ -8,18 +8,25 @@
 
 import UIKit
 
+protocol TimerDelegate {
+    func timerElapsed()
+    func reset()
+}
+
  class Singleton {
     static let shared = Singleton()
 
     var mentorsList : [Card] = []
     var studentsList : [Card] = []
     var cardsList: [Card] = []
+    var delegate: TimerDelegate?
     
-//    timer 
-    var seconds = 30
+//    timer
     var timer = Timer()
     var isTimerRunning = false
     var resumeTapped = false
+    var isStarted = false
+    public var seconds: Int = 30
 
 //    var mentorCardListCompressed: [Card] = []
 //    var studentCardListCompressed: [Card] = []
@@ -53,12 +60,31 @@ import UIKit
     }
     
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+        
+        if isStarted == false {
+            isStarted = true
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+        } else {
+            timer.invalidate()
+            isStarted = false
+        }
+        
     }
     
     @objc func updateTimer() {
         seconds -= 1
-//        QuizViewController.updateTimerino(&seconds)
+        if seconds == 0 {
+            resetButtonTapped()
+            delegate?.reset()
+        } else {
+            delegate?.timerElapsed();
+        }
+        
+    }
+    
+    func resetButtonTapped() {
+        timer.invalidate()
+        seconds = 30
     }
     
     

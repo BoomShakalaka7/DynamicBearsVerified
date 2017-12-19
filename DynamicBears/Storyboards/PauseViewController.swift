@@ -8,8 +8,28 @@
 
 import UIKit
 
-class PauseViewController: UIViewController {
+class PauseViewController: UIViewController, TimerDelegate{
 
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    
+    
+    override func viewDidLoad() {
+        scoreLabel.text = SessionController.score.description
+        super.viewDidLoad()
+        Singleton.shared.delegate = self
+        
+        //        scoreLabel.text = SessionController.score.description
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        Singleton.shared.delegate = nil
+    }
+    
+    
+    
     @IBAction func goBackToStart(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "mainstart") as UIViewController
@@ -17,7 +37,7 @@ class PauseViewController: UIViewController {
         self.present(controller, animated: false, completion: nil)
         SessionController.score=0
         SessionController.lives=3
-        
+//        Singleton.shared.resetButtonTapped()
     }
     @IBAction func restartGame(_ sender: Any) {
         SessionController.newGame()
@@ -27,6 +47,7 @@ class PauseViewController: UIViewController {
         
         SessionController.score = 0
         SessionController.lives = 3
+//        Singleton.shared.runTimer()
     }
     
     @IBAction func infoButton(_ sender: UIButton) {
@@ -36,18 +57,9 @@ class PauseViewController: UIViewController {
         self.present(controller, animated: true, completion: nil)
         
     }
-    
-    @IBOutlet weak var scoreLabel: UILabel!
-    override func viewDidLoad() {
-        scoreLabel.text = SessionController.score.description
-        super.viewDidLoad()
-        //        scoreLabel.text = SessionController.score.description
-        // Do any additional setup after loading the view.
-    }
+
     
     @IBAction func buttonPressed(_ sender: Any) {
-        
-        self.dismiss(animated: true, completion: nil)
         
         if Singleton.shared.resumeTapped == false {
             Singleton.shared.timer.invalidate()
@@ -57,12 +69,20 @@ class PauseViewController: UIViewController {
             Singleton.shared.resumeTapped = false
         }
         
+        self.dismiss(animated: true, completion: nil)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    func timerElapsed() {
+        
+    }
+    
+    func reset() {
+        
+    }
 
 }

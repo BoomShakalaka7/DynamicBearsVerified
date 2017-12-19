@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizViewController: UIViewController,UIScrollViewDelegate {
+class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var heart0: UIImageView!
@@ -20,6 +20,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    
     var contentWidth: CGFloat = 0.0
     var numImages = 4
     var selectedCardsMaybe : [Card]? = []
@@ -28,14 +29,9 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     var gameIsStarted = true
     var nameLabel = UILabel()
     
-    
-    
-    
     override func viewDidLoad(){
         super.viewDidLoad()
         scrollView.delegate = self
-        Singleton.shared.runTimer()
-        
         lives = [heart0, heart1, heart2]
         if SessionController.lives == 3 {
             print("You have all lives")
@@ -50,7 +46,6 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             heart0.isHighlighted=true
             
         }
-        
         
         
         
@@ -116,19 +111,16 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
         view.addSubview(currLabel!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Singleton.shared.delegate = self
+        Singleton.shared.runTimer()
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(375))
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        
-    }
-    
-    
-   
     
     @IBAction func pauseButton(_ sender: Any) {
 
@@ -171,6 +163,9 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
                         SessionController.round = 1
                         self.present(controller, animated: true, completion: nil)
                     } else {
+                        let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "gameOver") as UIViewController
+                        self.present(controller, animated: true, completion: nil)
                         //SEGUE TO GAMEOVER SCREEN!!!!!!
                         //                        *******PROBLEM ******** WHEN YOU CHANGE LEVEL LIVES BECAME LIKE THE INITIAL PART ALSO IF WE
                         //               HAVE LOSE ONE
@@ -218,15 +213,20 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
                 
                 
             }
-            
-            
         }
-        
     }
     
-//    public func updateTimerino(label: inout Int) {
-//        timeLabel.text = String(label)
-//    }
+    func timerElapsed() {
+        timeLabel.text = "\(Singleton.shared.seconds)"
+    }
+    
+    func reset() {
+        let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "gameOver") as UIViewController
+        self.present(controller, animated: false, completion: nil)
+    }
+    
+
 }
 
 //        else {
