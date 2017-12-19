@@ -33,7 +33,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         timeLabel.isHidden=true
-                lives = [heart0, heart1, heart2]
+        lives = [heart0, heart1, heart2]
         if SessionController.lives == 3 {
             print("You have all lives")
         }else if SessionController.lives == 2{
@@ -47,8 +47,10 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             heart0.isHighlighted=true
             
         }
-
-    
+        
+        
+        
+        
         selectedCards = CardController.getCardsNotOnThisLevel()
         
         pageControl.numberOfPages = selectedCards.count
@@ -60,10 +62,10 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             contentWidth += view.frame.width
             
             
-//            //Shadow
-//            let shadow = UIImageView(image: #imageLiteral(resourceName: "cardShadow"))
-//            shadow.frame = CGRect(x: xCoordinate-187.5, y: (view.frame.height/2)-333, width: 375, height: 520)
-//            scrollView.addSubview(shadow)
+            //            //Shadow
+            //            let shadow = UIImageView(image: #imageLiteral(resourceName: "cardShadow"))
+            //            shadow.frame = CGRect(x: xCoordinate-187.5, y: (view.frame.height/2)-333, width: 375, height: 520)
+            //            scrollView.addSubview(shadow)
             
             //Image
             let imageToDisplay = card.photo
@@ -81,7 +83,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             imageView.addSubview(gradient)
             
             
-//            // Name and surname label
+            //            // Name and surname label
             
             
             
@@ -89,7 +91,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
             nameLabel.textColor = UIColor.white
             nameLabel.text = "\(card.name) \(card.surname)"
-//            imageView.addSubview(nameLabel)
+            //            imageView.addSubview(nameLabel)
             labels.append(nameLabel)
             
             
@@ -100,7 +102,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             jobLabel.textColor = UIColor.white
             jobLabel.text = card.description
             imageView.addSubview(jobLabel)
-//            labels.append(jobLabel)
+            //            labels.append(jobLabel)
             
             
             index = index+1
@@ -118,7 +120,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
         
     }
     
@@ -132,19 +134,19 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     }
     
     @IBAction func choose(_ sender: Any) {
-//        if gameIsStarted==false {
-//        for label in labels {
-//            label.isHidden = true
-//        }
+        //        if gameIsStarted==false {
+        //        for label in labels {
+        //            label.isHidden = true
+        //        }
         
-//        let randomIndex = arc4random_uniform(UInt32(selectedCards.count))
-//        nameLabel = UILabel(frame: CGRect(x: 28, y: 487, width: 320, height: 30))
-//        nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
-//        nameLabel.textColor = UIColor.white
-//        nameLabel.text = "\(selectedCards[Int(randomIndex)].name) \          (selectedCards[Int(randomIndex)].surname)"
-//            self.view.addSubview(nameLabel)
-//            gameIsStarted = true
-//            return
+        //        let randomIndex = arc4random_uniform(UInt32(selectedCards.count))
+        //        nameLabel = UILabel(frame: CGRect(x: 28, y: 487, width: 320, height: 30))
+        //        nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
+        //        nameLabel.textColor = UIColor.white
+        //        nameLabel.text = "\(selectedCards[Int(randomIndex)].name) \          (selectedCards[Int(randomIndex)].surname)"
+        //            self.view.addSubview(nameLabel)
+        //            gameIsStarted = true
+        //            return
         let currCard = selectedCards[pageControl.currentPage]
         if (currCard.compare(currLabel!.text!)) {
             if (selectedCards.count == 1) {
@@ -157,8 +159,8 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
                         self.present(controller, animated: true, completion: nil)
                     } else {
                         //SEGUE TO GAMEOVER SCREEN!!!!!!
-//                        *******PROBLEM ******** WHEN YOU CHANGE LEVEL LIVES BECAME LIKE THE INITIAL PART ALSO IF WE
- //               HAVE LOSE ONE
+                        //                        *******PROBLEM ******** WHEN YOU CHANGE LEVEL LIVES BECAME LIKE THE INITIAL PART ALSO IF WE
+                        //               HAVE LOSE ONE
                     }
                     
                 } else {
@@ -180,9 +182,9 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
                 currLabel!.text! = labels.remove(at: 0).text!
             }
             
-//            view.addSubview(currLabel!)
+            //            view.addSubview(currLabel!)
             SessionController.score += 20 //SCORE YOU GET PER CORRECT CARD
-        
+            
         }else{
             SessionController.lives -= 1
             if SessionController.lives == 3 {
@@ -196,15 +198,20 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
                 heart2.isHighlighted=true
                 heart1.isHighlighted=true
                 heart0.isHighlighted=true
+                SessionController.lives=3
+                let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "gameOver") as UIViewController
+                self.present(controller, animated: false, completion: nil)
+                
                 
             }
             
-    
+            
         }
+        
+    }
+}
 
-}
-}
-    
 //        else {
 //        let selectedAnswer = "\(selectedCards[pageControl.currentPage].name) \(selectedCards[pageControl.currentPage].surname)"
 //        if (selectedAnswer == nameLabel.text!) {
@@ -228,16 +235,13 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
 //        heart0.isHighlighted=true
 //        //                    check for dead!
 //        }
-        //CHECK FOR DEAD, CHOOSE WHAT TO DO
+//CHECK FOR DEAD, CHOOSE WHAT TO DO
 //        }
 //        }
 //        }
 
-    
-    //    var score  : Score = Score(userName: SessionController.userName!, score: 0, scoreType: 0)
-    //    ScoreController.postScore(score: score)
 
-
-
+//    var score  : Score = Score(userName: SessionController.userName!, score: 0, scoreType: 0)
+//    ScoreController.postScore(score: score)
 
 
