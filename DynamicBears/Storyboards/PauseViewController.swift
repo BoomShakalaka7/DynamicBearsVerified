@@ -29,6 +29,13 @@ class PauseViewController: UIViewController {
         SessionController.lives = 3
     }
     
+    @IBAction func infoButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "InfoScreen", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "InfoScreenViewController") as UIViewController
+        
+        self.present(controller, animated: true, completion: nil)
+        
+    }
     
     @IBOutlet weak var scoreLabel: UILabel!
     override func viewDidLoad() {

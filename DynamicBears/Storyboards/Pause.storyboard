@@ -70,20 +70,30 @@
                                 <color key="textColor" red="0.031372549020000001" green="0.20392156859999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhn-AP-bfM">
+                                <rect key="frame" x="16" y="607" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="info-button"/>
+                                <connections>
+                                    <action selector="infoButton:" destination="jWY-FR-QtJ" eventType="touchUpInside" id="RGS-7M-uoL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="aAc-cm-y4f"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2eP-Z9-blJ"/>
                     <connections>
                         <outlet property="scoreLabel" destination="0QP-2z-xC5" id="Gof-8Q-dwo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ua-m8-2Lr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17" y="8"/>
+            <point key="canvasLocation" x="320.80000000000001" y="7.6461769115442282"/>
         </scene>
     </scenes>
     <resources>
         <image name="Big Button" width="222" height="44"/>
+        <image name="info-button" width="56" height="56"/>
     </resources>
 </document>
