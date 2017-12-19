@@ -65,6 +65,10 @@ override func viewDidLoad() {
     //    @IBAction func categoryButton(_ sender: Any) {
     //            self.performSegue(withIdentifier: "categoryVC", sender: self)
     //    }
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
 }
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -78,5 +82,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     
     return true
 }
+
 
 

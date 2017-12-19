@@ -215,6 +215,10 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             }
         }
     }
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
     
     func timerElapsed() {
         timeLabel.text = "\(Singleton.shared.seconds)"

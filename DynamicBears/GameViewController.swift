@@ -14,6 +14,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var infoLabel: UILabel!
     
     var contentWidth: CGFloat = 0.0
     var numImages = 4
@@ -28,7 +29,8 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         
-        
+//        make play button hide
+        playButton.isHidden = true
         
         selectedCardsMaybe = CardController.getCardsNewLevel()
         if selectedCardsMaybe == nil {
@@ -98,7 +100,10 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(375))
-        
+        if pageControl.currentPage == 3{
+            playButton.isHidden = false
+            infoLabel.isHidden = true
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -125,8 +130,10 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
         
     }
-    }
     
+    
+    }
+
 //    var score  : Score = Score(userName: SessionController.userName!, score: 0, scoreType: 0)
 //    ScoreController.postScore(score: score)
     
