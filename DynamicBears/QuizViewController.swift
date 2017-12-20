@@ -30,6 +30,10 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
     var nameLabel = UILabel()
     
     override func viewDidLoad(){
+        Singleton.shared.delegate = self
+        Singleton.shared.runTimer()
+        
+        
         super.viewDidLoad()
         scrollView.delegate = self
         lives = [heart0, heart1, heart2]
@@ -44,9 +48,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             heart2.isHighlighted=true
             heart1.isHighlighted=true
             heart0.isHighlighted=true
-            
-        }
-        
+            }
         
         
         selectedCards = CardController.getCardsNotOnThisLevel()
@@ -113,8 +115,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Singleton.shared.delegate = self
-        Singleton.shared.runTimer()
+    
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -15,6 +15,9 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var heart0: UIImageView!
+    @IBOutlet weak var heart1: UIImageView!
+    @IBOutlet weak var heart2: UIImageView!
     
     var contentWidth: CGFloat = 0.0
     var numImages = 4
@@ -30,6 +33,19 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
 //        make play button hide
         playButton.isHidden = true
+        lives = [heart0, heart1, heart2]
+        if SessionController.lives == 3 {
+            print("You have all lives")
+        }else if SessionController.lives == 2{
+            heart2.isHighlighted=true
+        }else if SessionController.lives == 1 {
+            heart2.isHighlighted=true
+            heart1.isHighlighted=true
+        }else if SessionController.lives == 0 {
+            heart2.isHighlighted=true
+            heart1.isHighlighted=true
+            heart0.isHighlighted=true
+        }
         
         selectedCardsMaybe = CardController.getCardsNewLevel()
         if selectedCardsMaybe == nil {
