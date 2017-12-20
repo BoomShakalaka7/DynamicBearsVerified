@@ -57,8 +57,11 @@ class PauseViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        timerLabel.text = "\(secondi)"
-        
+        if secondi < 10 {
+            timerLabel.text = "00:0\(secondi)"
+        }else{
+            timerLabel.text = "00:\(secondi)"
+        }        
     }
     
     @IBAction func goBackToStart(_ sender: Any) {
