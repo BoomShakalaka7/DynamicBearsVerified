@@ -23,7 +23,11 @@ class InfoScreenViewController: UIViewController {
     {
         return true
     }
-
+    
+    @IBAction func showCredits(_ sender: Any) {
+        performSegue(withIdentifier: "showcredits", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
