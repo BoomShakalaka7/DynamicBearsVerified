@@ -239,6 +239,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
                 heart1.isHighlighted=true
                 heart0.isHighlighted=true
                 SessionController.lives=3
+                notification.notificationOccurred(.error)
                 let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "gameOver") as UIViewController
                 self.present(controller, animated: false, completion: nil)
@@ -250,7 +251,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     
     
     
-    let notification = UINotificationFeedbackGenerator() //haptic feedback
+    let notification = UINotificationFeedbackGenerator()//haptic feedback
     
     func timerElapsed() {
             if Singleton.shared.seconds < 10 {

@@ -9,10 +9,9 @@
 import UIKit
 
 class GameOverViewController: UIViewController {
+    let notification = UINotificationFeedbackGenerator()
     @IBOutlet weak var viewPickUserName: UIView!
-    
     @IBOutlet weak var txtUserName: UITextField!
-    
     @IBOutlet weak var lblErrorString: UILabel!
     @IBOutlet weak var lblUserNameError: UILabel!
     @IBOutlet weak var btnRetry: UIButton!
@@ -33,11 +32,14 @@ class GameOverViewController: UIViewController {
                 
             } else {
                 lblErrorString.text = "This name is taken"
+                notification.notificationOccurred(.error)
+                
             }
             
             
         } else {
             lblErrorString.text = "Please enter a valid name"
+            notification.notificationOccurred(.error)
         }
         
         
