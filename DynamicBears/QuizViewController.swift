@@ -10,6 +10,7 @@ import UIKit
 
 class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
 
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var heart0: UIImageView!
     @IBOutlet weak var heart1: UIImageView!
@@ -30,6 +31,10 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
     var nameLabel = UILabel()
     
     override func viewDidLoad(){
+        Singleton.shared.delegate = self
+        Singleton.shared.runTimer()
+        
+        
         super.viewDidLoad()
         scrollView.delegate = self
         lives = [heart0, heart1, heart2]
@@ -44,8 +49,8 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             heart2.isHighlighted=true
             heart1.isHighlighted=true
             heart0.isHighlighted=true
-            
-        }
+            }
+        
         
         
         
@@ -85,7 +90,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             
             
             
-            let nameLabel = UILabel(frame: CGRect(x: 38, y: 488, width: 320, height: 30))
+            let nameLabel = UILabel(frame: CGRect(x: 25, y: 496, width: 320, height: 30))
             nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
             nameLabel.textColor = UIColor.white
             nameLabel.text = "\(card.name) \(card.surname)"
@@ -95,7 +100,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             
             
             // Job label
-            let jobLabel = UILabel(frame: CGRect(x: 28, y: 455, width: 320, height: 30))
+            let jobLabel = UILabel(frame: CGRect(x: 15, y: 455, width: 320, height: 30))
             jobLabel.font = UIFont.systemFont(ofSize: 22.0, weight: .light)
             jobLabel.textColor = UIColor.white
             jobLabel.text = card.description
@@ -113,8 +118,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Singleton.shared.delegate = self
-        Singleton.shared.runTimer()
+    
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -132,10 +136,12 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             Singleton.shared.resumeTapped = false
         }
         
-        let storyboard = UIStoryboard(name: "Pause", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as UIViewController
+        let img =  UIImage.init(view: mainView)
         
-        self.present(controller, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Pause", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as! PauseViewController
+        controller.snapshot = img
+        self.present(controller, animated: false, completion: nil)
     }
     
     @IBAction func choose(_ sender: Any) {
@@ -195,6 +201,8 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             
         }else{
             SessionController.lives -= 1
+//            haptic feedback
+            notification.notificationOccurred(.error)
             if SessionController.lives == 3 {
                 print("You have all lives")
             }else if SessionController.lives == 2{
@@ -215,14 +223,15 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             }
         }
     }
-    override var prefersStatusBarHidden: Bool
-    {
-        return true
-    }
+let notification = UINotificationFeedbackGenerator() //haptic feedback
     
     func timerElapsed() {
-        timeLabel.text = "\(Singleton.shared.seconds)"
-    }
+            if Singleton.shared.seconds < 10 {
+                timeLabel.text = "00:0\(Singleton.shared.seconds)"
+            }else{
+                timeLabel.text = "00:\(Singleton.shared.seconds)"
+            }
+        }
     
     func reset() {
         let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
@@ -230,8 +239,13 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
         self.present(controller, animated: false, completion: nil)
     }
     
-
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
+    
 }
+
 
 //        else {
 //        let selectedAnswer = "\(selectedCards[pageControl.currentPage].name) \(selectedCards[pageControl.currentPage].surname)"

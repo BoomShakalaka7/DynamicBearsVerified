@@ -24,34 +24,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="5Ty-8e-MLl">
-                                <rect key="frame" x="17" y="30" width="24" height="24"/>
+                                <rect key="frame" x="17" y="22" width="24" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="5Ca-sD-nRV">
-                                <rect key="frame" x="48" y="30" width="24" height="24"/>
+                                <rect key="frame" x="47" y="22" width="24" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="2ag-ju-oyj">
-                                <rect key="frame" x="78" y="30" width="24" height="24"/>
+                                <rect key="frame" x="77" y="22" width="24" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOT-Uq-WgP">
                                 <rect key="frame" x="0.0" y="63" width="375" height="520"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJB-o4-zTk">
-                                <rect key="frame" x="332" y="27" width="23" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="pauseButton"/>
-                                <connections>
-                                    <action selector="pauseButton:" destination="Syp-aT-3rW" eventType="touchUpInside" id="9u6-J8-1ah"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggy-68-a3d">
                                 <rect key="frame" x="98" y="601" width="178" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
-                                <state key="normal" title="CHOOSE" backgroundImage="Small Button">
+                                <state key="normal" title="Match" backgroundImage="Small Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -64,13 +56,21 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2o-1c-jmX">
-                                <rect key="frame" x="137" y="29" width="100" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:30" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2o-1c-jmX">
+                                <rect key="frame" x="152" y="20" width="105" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.031372549019607843" green="0.20392156862745098" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJB-o4-zTk">
+                                <rect key="frame" x="320" y="13" width="55" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="pauseButton"/>
+                                <connections>
+                                    <action selector="pauseButton:" destination="Syp-aT-3rW" eventType="touchUpInside" id="9u6-J8-1ah"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kjV-5N-Gm9"/>
@@ -79,6 +79,7 @@
                         <outlet property="heart0" destination="5Ty-8e-MLl" id="mgV-G2-AII"/>
                         <outlet property="heart1" destination="5Ca-sD-nRV" id="4L6-bZ-x0R"/>
                         <outlet property="heart2" destination="2ag-ju-oyj" id="rbI-lw-Jdo"/>
+                        <outlet property="mainView" destination="qvC-d7-Peh" id="v9l-lh-Tyj"/>
                         <outlet property="pageControl" destination="1et-nK-49f" id="NPb-fG-1DB"/>
                         <outlet property="playButton" destination="Ggy-68-a3d" id="h2A-Nb-Odm"/>
                         <outlet property="scrollView" destination="eOT-Uq-WgP" id="xJe-rY-ep5"/>

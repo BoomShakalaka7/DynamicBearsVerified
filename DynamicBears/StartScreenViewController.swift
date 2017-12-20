@@ -11,7 +11,10 @@ class StartScreenViewController: UIViewController {
 //    }
     
     
-override func viewDidLoad() {
+    @IBAction func showInfo(_ sender: Any) {
+        performSegue(withIdentifier: "info", sender: self)
+    }
+    override func viewDidLoad() {
         super.viewDidLoad()
         //FOR TESTING...
 //        let cards = CardData.getAllCards()
@@ -21,6 +24,7 @@ override func viewDidLoad() {
 //        }
     
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

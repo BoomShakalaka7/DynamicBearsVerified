@@ -151,10 +151,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
     }
-    override var prefersStatusBarHidden: Bool
-    {
-        return true
-    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "detailVC", sender: self)
     }

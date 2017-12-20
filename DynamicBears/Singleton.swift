@@ -83,7 +83,6 @@ protocol TimerDelegate {
     }
     
     func resetButtonTapped() {
-        timer.invalidate()
         seconds = 30
     }
     

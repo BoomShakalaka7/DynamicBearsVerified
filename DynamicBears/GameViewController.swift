@@ -15,6 +15,10 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var heart0: UIImageView!
+    @IBOutlet weak var heart1: UIImageView!
+    @IBOutlet weak var heart2: UIImageView!
+    @IBOutlet var mainView: UIView!
     
     var contentWidth: CGFloat = 0.0
     var numImages = 4
@@ -30,6 +34,19 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
 //        make play button hide
         playButton.isHidden = true
+        lives = [heart0, heart1, heart2]
+        if SessionController.lives == 3 {
+            print("You have all lives")
+        }else if SessionController.lives == 2{
+            heart2.isHighlighted=true
+        }else if SessionController.lives == 1 {
+            heart2.isHighlighted=true
+            heart1.isHighlighted=true
+        }else if SessionController.lives == 0 {
+            heart2.isHighlighted=true
+            heart1.isHighlighted=true
+            heart0.isHighlighted=true
+        }
         
         selectedCardsMaybe = CardController.getCardsNewLevel()
         if selectedCardsMaybe == nil {
@@ -74,7 +91,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             
             
             // Name and surname label
-            let nameLabel = UILabel(frame: CGRect(x: 28, y: 418, width: 320, height: 30))
+            let nameLabel = UILabel(frame: CGRect(x: 15, y: 425, width: 320, height: 30))
             nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
             nameLabel.textColor = UIColor.white
             nameLabel.text = "\(card.name) \(card.surname)"
@@ -84,7 +101,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             
             
             // Job label
-            let jobLabel = UILabel(frame: CGRect(x: 28, y: 455, width: 320, height: 30))
+            let jobLabel = UILabel(frame: CGRect(x: 15, y: 455, width: 320, height: 30))
             jobLabel.font = UIFont.systemFont(ofSize: 22.0, weight: .light)
             jobLabel.textColor = UIColor.white
             jobLabel.text = card.description
@@ -113,10 +130,12 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func pauseButton(_ sender: Any) {
         //        self.performSegue(withIdentifier: "pauseVC", sender: self)
         
-        let storyboard = UIStoryboard(name: "Pause", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as UIViewController
+        let img =  UIImage.init(view: mainView)
         
-        self.present(controller, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Pause", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as! PauseViewController
+        controller.snapshot = img
+        self.present(controller, animated: false, completion: nil)
     }
     
     
@@ -130,9 +149,23 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
     }
+    
+}
 
+extension UIImage{
+    convenience init(view: UIView) {
+        
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: (image?.cgImage)!)
+    }
+}
 //    var score  : Score = Score(userName: SessionController.userName!, score: 0, scoreType: 0)
 //    ScoreController.postScore(score: score)
     

@@ -19,11 +19,12 @@ class InfoScreenViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override var prefersStatusBarHidden: Bool
-    {
-        return true
-    }
 
+    
+    @IBAction func showCredits(_ sender: Any) {
+        performSegue(withIdentifier: "showcredits", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
