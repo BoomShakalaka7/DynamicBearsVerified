@@ -9,10 +9,13 @@
 import UIKit
 
 class PauseViewController: UIViewController, TimerDelegate{
-
+    var lives : [UIImageView] = []
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var backgroundView: UIImageView!
     var snapshot: UIImage!
+    @IBOutlet weak var heart0: UIImageView!
+    @IBOutlet weak var heart1: UIImageView!
+    @IBOutlet weak var heart2: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,19 @@ class PauseViewController: UIViewController, TimerDelegate{
         loadBlurredImage()
         scoreLabel.text = SessionController.score.description
                 Singleton.shared.delegate = self
+        lives = [heart0, heart1, heart2]
+        if SessionController.lives == 3 {
+            print("You have all lives")
+        }else if SessionController.lives == 2{
+            heart2.isHighlighted=true
+        }else if SessionController.lives == 1 {
+            heart2.isHighlighted=true
+            heart1.isHighlighted=true
+        }else if SessionController.lives == 0 {
+            heart2.isHighlighted=true
+            heart1.isHighlighted=true
+            heart0.isHighlighted=true
+        }
         
         //        scoreLabel.text = SessionController.score.description
         // Do any additional setup after loading the view.

@@ -27,6 +27,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="Wss-lc-Zd5">
+                                <rect key="frame" x="17" y="37" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="2Ld-zL-NjZ">
+                                <rect key="frame" x="47" y="37" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="RKL-Ic-iS1">
+                                <rect key="frame" x="77" y="37" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38q-AP-GBT">
                                 <rect key="frame" x="78" y="300" width="220" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,6 +101,9 @@
                     <navigationItem key="navigationItem" id="2eP-Z9-blJ"/>
                     <connections>
                         <outlet property="backgroundView" destination="py9-8I-83Z" id="mvJ-S4-UBV"/>
+                        <outlet property="heart0" destination="Wss-lc-Zd5" id="dM8-sg-8h3"/>
+                        <outlet property="heart1" destination="2Ld-zL-NjZ" id="jyG-yS-sSh"/>
+                        <outlet property="heart2" destination="RKL-Ic-iS1" id="FuS-eT-WEl"/>
                         <outlet property="scoreLabel" destination="0QP-2z-xC5" id="Gof-8Q-dwo"/>
                     </connections>
                 </viewController>
@@ -99,6 +114,8 @@
     </scenes>
     <resources>
         <image name="Big Button" width="222" height="44"/>
+        <image name="heartfull" width="27" height="27"/>
         <image name="info-button" width="42" height="42"/>
+        <image name="like-heart-symbol-of-ios-7-interface_318-36651" width="27" height="27"/>
     </resources>
 </document>
