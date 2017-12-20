@@ -81,6 +81,7 @@ class PauseViewController: UIViewController {
         
         SessionController.score = 0
         SessionController.lives = 3
+        Singleton.shared.seconds = 30
 //        Singleton.shared.runTimer()
     }
     
