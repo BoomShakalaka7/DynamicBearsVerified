@@ -197,12 +197,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Howtoplay" highlightedImage="Howtoplay" translatesAutoresizingMaskIntoConstraints="NO" id="c8w-Z3-t8f">
-                                <rect key="frame" x="0.0" y="118" width="375" height="603"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Howtoplay" highlightedImage="Howtoplay" translatesAutoresizingMaskIntoConstraints="NO" id="c8w-Z3-t8f">
+                                <rect key="frame" x="0.0" y="64" width="375" height="532"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0u-r6-geS">
-                                <rect key="frame" x="332" y="624" width="43" height="43"/>
+                                <rect key="frame" x="316" y="604" width="43" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="dynamicBears"/>
                                 <connections>
@@ -229,8 +229,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Developers" translatesAutoresizingMaskIntoConstraints="NO" id="8qJ-00-kLs">
-                                <rect key="frame" x="0.0" y="89" width="375" height="578"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Developers" translatesAutoresizingMaskIntoConstraints="NO" id="8qJ-00-kLs">
+                                <rect key="frame" x="0.0" y="128" width="375" height="539"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

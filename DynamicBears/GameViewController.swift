@@ -90,7 +90,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             
             
             // Name and surname label
-            let nameLabel = UILabel(frame: CGRect(x: 28, y: 418, width: 320, height: 30))
+            let nameLabel = UILabel(frame: CGRect(x: 15, y: 425, width: 320, height: 30))
             nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
             nameLabel.textColor = UIColor.white
             nameLabel.text = "\(card.name) \(card.surname)"
@@ -100,7 +100,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             
             
             // Job label
-            let jobLabel = UILabel(frame: CGRect(x: 28, y: 455, width: 320, height: 30))
+            let jobLabel = UILabel(frame: CGRect(x: 15, y: 455, width: 320, height: 30))
             jobLabel.font = UIFont.systemFont(ofSize: 22.0, weight: .light)
             jobLabel.textColor = UIColor.white
             jobLabel.text = card.description
@@ -146,8 +146,12 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
     }
+    
+}
 
 //    var score  : Score = Score(userName: SessionController.userName!, score: 0, scoreType: 0)
 //    ScoreController.postScore(score: score)

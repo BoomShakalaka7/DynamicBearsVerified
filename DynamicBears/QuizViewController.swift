@@ -51,6 +51,8 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             }
         
         
+        
+        
         selectedCards = CardController.getCardsNotOnThisLevel()
         
         pageControl.numberOfPages = selectedCards.count
@@ -87,7 +89,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             
             
             
-            let nameLabel = UILabel(frame: CGRect(x: 38, y: 488, width: 320, height: 30))
+            let nameLabel = UILabel(frame: CGRect(x: 25, y: 496, width: 320, height: 30))
             nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
             nameLabel.textColor = UIColor.white
             nameLabel.text = "\(card.name) \(card.surname)"
@@ -97,7 +99,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             
             
             // Job label
-            let jobLabel = UILabel(frame: CGRect(x: 28, y: 455, width: 320, height: 30))
+            let jobLabel = UILabel(frame: CGRect(x: 15, y: 455, width: 320, height: 30))
             jobLabel.font = UIFont.systemFont(ofSize: 22.0, weight: .light)
             jobLabel.textColor = UIColor.white
             jobLabel.text = card.description
@@ -196,6 +198,8 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             
         }else{
             SessionController.lives -= 1
+//            haptic feedback
+            notification.notificationOccurred(.error)
             if SessionController.lives == 3 {
                 print("You have all lives")
             }else if SessionController.lives == 2{
@@ -216,10 +220,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             }
         }
     }
-    override var prefersStatusBarHidden: Bool
-    {
-        return true
-    }
+let notification = UINotificationFeedbackGenerator() //haptic feedback
     
     func timerElapsed() {
         timeLabel.text = "\(Singleton.shared.seconds)"
@@ -231,7 +232,11 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
         self.present(controller, animated: false, completion: nil)
     }
     
-
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
+    
 }
 
 //        else {
