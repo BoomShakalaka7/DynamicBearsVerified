@@ -10,6 +10,7 @@ import UIKit
 
 class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
 
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var heart0: UIImageView!
     @IBOutlet weak var heart1: UIImageView!
@@ -135,10 +136,12 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             Singleton.shared.resumeTapped = false
         }
         
-        let storyboard = UIStoryboard(name: "Pause", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as UIViewController
+        let img =  UIImage.init(view: mainView)
         
-        self.present(controller, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Pause", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as! PauseViewController
+        controller.snapshot = img
+        self.present(controller, animated: false, completion: nil)
     }
     
     @IBAction func choose(_ sender: Any) {
@@ -223,8 +226,12 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
 let notification = UINotificationFeedbackGenerator() //haptic feedback
     
     func timerElapsed() {
-        timeLabel.text = "\(Singleton.shared.seconds)"
-    }
+            if Singleton.shared.seconds < 10 {
+                timeLabel.text = "00:0\(Singleton.shared.seconds)"
+            }else{
+                timeLabel.text = "00:\(Singleton.shared.seconds)"
+            }
+        }
     
     func reset() {
         let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
@@ -238,6 +245,7 @@ let notification = UINotificationFeedbackGenerator() //haptic feedback
     }
     
 }
+
 
 //        else {
 //        let selectedAnswer = "\(selectedCards[pageControl.currentPage].name) \(selectedCards[pageControl.currentPage].surname)"

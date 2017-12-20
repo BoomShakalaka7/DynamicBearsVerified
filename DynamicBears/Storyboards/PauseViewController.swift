@@ -9,15 +9,33 @@
 import UIKit
 
 class PauseViewController: UIViewController, TimerDelegate{
-
+    var lives : [UIImageView] = []
     @IBOutlet weak var scoreLabel: UILabel!
-    
-    
+    @IBOutlet weak var backgroundView: UIImageView!
+    var snapshot: UIImage!
+    @IBOutlet weak var heart0: UIImageView!
+    @IBOutlet weak var heart1: UIImageView!
+    @IBOutlet weak var heart2: UIImageView!
     
     override func viewDidLoad() {
-        scoreLabel.text = SessionController.score.description
         super.viewDidLoad()
-        Singleton.shared.delegate = self
+        backgroundView.image = snapshot
+        loadBlurredImage()
+        scoreLabel.text = SessionController.score.description
+                Singleton.shared.delegate = self
+        lives = [heart0, heart1, heart2]
+        if SessionController.lives == 3 {
+            print("You have all lives")
+        }else if SessionController.lives == 2{
+            heart2.isHighlighted=true
+        }else if SessionController.lives == 1 {
+            heart2.isHighlighted=true
+            heart1.isHighlighted=true
+        }else if SessionController.lives == 0 {
+            heart2.isHighlighted=true
+            heart1.isHighlighted=true
+            heart0.isHighlighted=true
+        }
         
         //        scoreLabel.text = SessionController.score.description
         // Do any additional setup after loading the view.
@@ -26,6 +44,13 @@ class PauseViewController: UIViewController, TimerDelegate{
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         Singleton.shared.delegate = nil
+    }
+    
+    func loadBlurredImage () {
+        //        let transition: CATransition = CATransition()
+        //        transition.duration = 1
+        //        transition.timingFunction = backgroundView
+        self.backgroundView.addBlurEffect()
     }
     
     
@@ -69,7 +94,7 @@ class PauseViewController: UIViewController, TimerDelegate{
             Singleton.shared.resumeTapped = false
         }
         
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
         
     }
     override func didReceiveMemoryWarning() {
@@ -84,5 +109,23 @@ class PauseViewController: UIViewController, TimerDelegate{
     func reset() {
         
     }
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
 
 }
+
+extension UIImageView
+{
+    func addBlurEffect()
+    {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.addSubview(blurEffectView)
+    }
+}
+

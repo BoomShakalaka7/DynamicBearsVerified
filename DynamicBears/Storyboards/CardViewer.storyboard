@@ -29,15 +29,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-JG-1Gu">
-                                <rect key="frame" x="18" y="25" width="24" height="24"/>
+                                <rect key="frame" x="17" y="22" width="24" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="AHf-SU-dOX">
-                                <rect key="frame" x="49" y="25" width="24" height="24"/>
+                                <rect key="frame" x="47" y="22" width="24" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="Js2-jd-eTD">
-                                <rect key="frame" x="79" y="25" width="24" height="24"/>
+                                <rect key="frame" x="77" y="22" width="24" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="L9M-VE-nEa">
@@ -70,10 +70,10 @@ to start the game.</string>
                                 <color key="textColor" red="0.031372549020000001" green="0.20392156859999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc2-cg-Cnj">
-                                <rect key="frame" x="163" y="23" width="48" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:30" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc2-cg-Cnj">
+                                <rect key="frame" x="149" y="22" width="100" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.031372549020000001" green="0.20392156859999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -94,6 +94,7 @@ to start the game.</string>
                         <outlet property="heart1" destination="AHf-SU-dOX" id="Cdn-i3-2sK"/>
                         <outlet property="heart2" destination="Js2-jd-eTD" id="jc5-Er-pGk"/>
                         <outlet property="infoLabel" destination="yF4-G0-hF8" id="NRR-Vw-d1y"/>
+                        <outlet property="mainView" destination="ZYU-2P-BoW" id="bGx-YR-mgn"/>
                         <outlet property="pageControl" destination="L9M-VE-nEa" id="zjr-eN-v2L"/>
                         <outlet property="playButton" destination="Cdw-0Y-7K5" id="OiN-yX-Zzb"/>
                         <outlet property="scrollView" destination="Vlw-Vs-3bh" id="7rQ-6b-sla"/>
