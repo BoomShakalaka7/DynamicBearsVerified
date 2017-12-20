@@ -153,7 +153,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="info-button"/>
                                 <connections>
-                                    <action selector="InfoButton:" destination="cpf-E1-99V" eventType="touchUpInside" id="BEa-WX-vvD"/>
+                                    <segue destination="LeX-E6-FZ8" kind="show" id="K1S-f9-WOi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-6M-q1z">
@@ -188,6 +188,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvw-gU-2uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-362" y="-1224"/>
+        </scene>
+        <!--Info Screen View Controller-->
+        <scene sceneID="hMk-Zp-oIm">
+            <objects>
+                <viewController id="LeX-E6-FZ8" customClass="InfoScreenViewController" customModule="DynamicBears" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Roi-Tm-xbx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Howtoplay" highlightedImage="Howtoplay" translatesAutoresizingMaskIntoConstraints="NO" id="c8w-Z3-t8f">
+                                <rect key="frame" x="0.0" y="118" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0u-r6-geS">
+                                <rect key="frame" x="332" y="624" width="43" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="dynamicBears"/>
+                                <connections>
+                                    <action selector="showCredits:" destination="LeX-E6-FZ8" eventType="touchUpInside" id="EfB-we-LhT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="JUz-vc-xnc"/>
+                    </view>
+                    <connections>
+                        <segue destination="jiZ-T8-16p" kind="show" identifier="showcredits" id="rKA-Ud-PBz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fU6-9u-t5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1303.2" y="-466.41679160419795"/>
+        </scene>
+        <!--Credits View Controller-->
+        <scene sceneID="sDO-OD-Smi">
+            <objects>
+                <viewController id="jiZ-T8-16p" customClass="creditsViewController" customModule="DynamicBears" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gDV-eV-qKe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="f9S-J4-xH5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ucR-7h-U0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="-458"/>
         </scene>
         <!--Package View Controller-->
         <scene sceneID="lFq-Bf-1f8">
@@ -369,6 +416,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Howtoplay" width="375" height="667"/>
         <image name="Logo" width="203" height="169"/>
         <image name="MentorsButtonImage" width="332" height="166"/>
         <image name="Search" width="42" height="42"/>
@@ -376,6 +424,7 @@
         <image name="StudentsButtonImage" width="335" height="170"/>
         <image name="UserButton" width="40" height="40"/>
         <image name="add" width="348" height="200"/>
+        <image name="dynamicBears" width="40" height="40"/>
         <image name="info-button" width="42" height="42"/>
     </resources>
 </document>
