@@ -34,8 +34,7 @@ class PauseViewController: UIViewController, TimerDelegate{
         //        let transition: CATransition = CATransition()
         //        transition.duration = 1
         //        transition.timingFunction = backgroundView
-        backgroundView.addBlurEffect()
-        
+        self.backgroundView.addBlurEffect()
     }
     
     

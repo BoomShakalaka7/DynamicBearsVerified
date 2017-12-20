@@ -94,6 +94,7 @@ to start the game.</string>
                         <outlet property="heart1" destination="AHf-SU-dOX" id="Cdn-i3-2sK"/>
                         <outlet property="heart2" destination="Js2-jd-eTD" id="jc5-Er-pGk"/>
                         <outlet property="infoLabel" destination="yF4-G0-hF8" id="NRR-Vw-d1y"/>
+                        <outlet property="mainView" destination="ZYU-2P-BoW" id="bGx-YR-mgn"/>
                         <outlet property="pageControl" destination="L9M-VE-nEa" id="zjr-eN-v2L"/>
                         <outlet property="playButton" destination="Cdw-0Y-7K5" id="OiN-yX-Zzb"/>
                         <outlet property="scrollView" destination="Vlw-Vs-3bh" id="7rQ-6b-sla"/>
