@@ -84,9 +84,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             
             //            // Name and surname label
             
-            
-            
-            let nameLabel = UILabel(frame: CGRect(x: 25, y: 496, width: 320, height: 30))
+            let nameLabel = UILabel(frame: CGRect(x: 38, y: 488, width: 320, height: 30))
             nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
             nameLabel.textColor = UIColor.white
             nameLabel.text = "\(card.name) \(card.surname)"
@@ -96,7 +94,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             
             
             // Job label
-            let jobLabel = UILabel(frame: CGRect(x: 15, y: 455, width: 320, height: 30))
+            let jobLabel = UILabel(frame: CGRect(x: 28, y: 455, width: 320, height: 30))
             jobLabel.font = UIFont.systemFont(ofSize: 22.0, weight: .light)
             jobLabel.textColor = UIColor.white
             jobLabel.text = card.description
@@ -105,6 +103,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             
             
             index = index+1
+
         }
         scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.size.height);
         labels = labels.shuffle
