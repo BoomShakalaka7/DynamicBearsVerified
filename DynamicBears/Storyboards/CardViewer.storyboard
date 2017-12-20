@@ -28,6 +28,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-JG-1Gu">
+                                <rect key="frame" x="17" y="30" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="AHf-SU-dOX">
+                                <rect key="frame" x="48" y="30" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="Js2-jd-eTD">
+                                <rect key="frame" x="78" y="30" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="L9M-VE-nEa">
                                 <rect key="frame" x="168" y="573" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,11 +78,21 @@ to start the game.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc2-cg-Cnj">
+                                <rect key="frame" x="150" y="30" width="100" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.51764705882352935" green="0.61960784313725492" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="M3D-Kk-dFi"/>
                     </view>
                     <connections>
+                        <outlet property="heart0" destination="MeY-JG-1Gu" id="sZQ-3U-GVd"/>
+                        <outlet property="heart1" destination="AHf-SU-dOX" id="Cdn-i3-2sK"/>
+                        <outlet property="heart2" destination="Js2-jd-eTD" id="jc5-Er-pGk"/>
                         <outlet property="infoLabel" destination="yF4-G0-hF8" id="NRR-Vw-d1y"/>
                         <outlet property="pageControl" destination="L9M-VE-nEa" id="zjr-eN-v2L"/>
                         <outlet property="playButton" destination="Cdw-0Y-7K5" id="OiN-yX-Zzb"/>
@@ -85,6 +107,8 @@ to start the game.</string>
     <resources>
         <image name="Palette 1" width="375" height="667"/>
         <image name="Small Button" width="178" height="56"/>
+        <image name="heartfull" width="27" height="27"/>
+        <image name="like-heart-symbol-of-ios-7-interface_318-36651" width="27" height="27"/>
         <image name="pauseButton" width="23" height="28"/>
     </resources>
 </document>

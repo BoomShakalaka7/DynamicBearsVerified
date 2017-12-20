@@ -32,6 +32,8 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
     override func viewDidLoad(){
         Singleton.shared.delegate = self
         Singleton.shared.runTimer()
+        
+        
         super.viewDidLoad()
         scrollView.delegate = self
         lives = [heart0, heart1, heart2]
