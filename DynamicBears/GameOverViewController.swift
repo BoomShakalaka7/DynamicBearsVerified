@@ -69,6 +69,8 @@ class GameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (SessionController.userName == nil) {
+            viewPickUserName.layer.cornerRadius = 10
+            viewPickUserName.layer.masksToBounds = true
             viewPickUserName.isHidden = false;
             btnRetry.isEnabled = false;
             btnHome.isEnabled = false;
@@ -98,5 +100,8 @@ class GameOverViewController: UIViewController {
     override var prefersStatusBarHidden: Bool
     {
         return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
     }
 }
