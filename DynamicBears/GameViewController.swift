@@ -18,6 +18,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var heart0: UIImageView!
     @IBOutlet weak var heart1: UIImageView!
     @IBOutlet weak var heart2: UIImageView!
+    @IBOutlet var mainView: UIView!
     
     var contentWidth: CGFloat = 0.0
     var numImages = 4
@@ -129,10 +130,12 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func pauseButton(_ sender: Any) {
         //        self.performSegue(withIdentifier: "pauseVC", sender: self)
         
-        let storyboard = UIStoryboard(name: "Pause", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as UIViewController
+        let img =  UIImage.init(view: mainView)
         
-        self.present(controller, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Pause", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as! PauseViewController
+        controller.snapshot = img
+        self.present(controller, animated: false, completion: nil)
     }
     
     
@@ -153,6 +156,16 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
 }
 
+extension UIImage{
+    convenience init(view: UIView) {
+        
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: (image?.cgImage)!)
+    }
+}
 //    var score  : Score = Score(userName: SessionController.userName!, score: 0, scoreType: 0)
 //    ScoreController.postScore(score: score)
     
