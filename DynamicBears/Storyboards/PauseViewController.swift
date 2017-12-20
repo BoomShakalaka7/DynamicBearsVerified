@@ -109,6 +109,10 @@ class PauseViewController: UIViewController, TimerDelegate{
     func reset() {
         
     }
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
 
 }
 

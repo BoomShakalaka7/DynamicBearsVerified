@@ -226,8 +226,12 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
 let notification = UINotificationFeedbackGenerator() //haptic feedback
     
     func timerElapsed() {
-        timeLabel.text = "\(Singleton.shared.seconds)"
-    }
+            if Singleton.shared.seconds < 10 {
+                timeLabel.text = "00:0\(Singleton.shared.seconds)"
+            }else{
+                timeLabel.text = "00:\(Singleton.shared.seconds)"
+            }
+        }
     
     func reset() {
         let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
