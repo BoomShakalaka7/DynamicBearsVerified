@@ -27,10 +27,6 @@ protocol TimerDelegate {
     var resumeTapped = false
     var isStarted = false
     public var seconds: Int = 30
-
-//    var mentorCardListCompressed: [Card] = []
-//    var studentCardListCompressed: [Card] = []
-//    var cardListCompressed: [Card] = []
     
     func initialize() {
 
@@ -58,44 +54,4 @@ protocol TimerDelegate {
         }
         return cards
     }
-    
-    func runTimer() {
-        
-        if isStarted == false {
-            isStarted = true
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
-        } else {
-            timer.invalidate()
-            isStarted = false
-        }
-        
-    }
-    
-    @objc func updateTimer() {
-        seconds -= 1
-        if seconds == 0 {
-            resetButtonTapped()
-            delegate?.reset()
-        } else {
-            delegate?.timerElapsed();
-        }
-        
-    }
-    
-    func resetButtonTapped() {
-        seconds = 30
-    }
-    
-    
-//    func loadResizedArray() {
-//        for i in 0..<studentsList.count {
-//            studentCardListCompressed.append(cardsList[i])
-//            studentCardListCompressed[i].photo = UIImage(data: studentsList[i].photo.jpeg(quality: .medium)!)!
-//        }
-//        for i in 0..<mentorsList.count {
-//            mentorCardListCompressed.append(cardsList[i])
-//            mentorCardListCompressed[i].photo = UIImage(data: mentorsList[i].photo.jpeg(quality: .medium)!)!
-//        }
-//        cardListCompressed = studentCardListCompressed + mentorCardListCompressed
-//    }
 }
