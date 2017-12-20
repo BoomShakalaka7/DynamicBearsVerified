@@ -47,21 +47,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNm-J5-1j3">
-                                <rect key="frame" x="279" y="502" width="56" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" backgroundImage="Home Button"/>
-                                <connections>
-                                    <action selector="goOnTheMainStoryBoard:" destination="0Fy-eH-LnX" eventType="touchUpInside" id="1Hg-iw-LQq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZP-OC-xIP">
-                                <rect key="frame" x="48" y="502" width="178" height="56"/>
+                                <rect key="frame" x="77" y="480" width="220" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
-                                <state key="normal" title="Retry" backgroundImage="Small Button-1">
-                                    <color key="titleColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Retry" backgroundImage="Big Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="retryButton:" destination="0Fy-eH-LnX" eventType="touchUpInside" id="Dft-95-IHq"/>
@@ -113,6 +104,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.031372549020000001" green="0.20392156859999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNm-J5-1j3">
+                                <rect key="frame" x="77" y="545" width="220" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <state key="normal" title="Main Menu" backgroundImage="Big Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goOnTheMainStoryBoard:" destination="0Fy-eH-LnX" eventType="touchUpInside" id="1Hg-iw-LQq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="J9g-oN-nXa"/>
@@ -133,8 +135,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Home Button" width="56" height="56"/>
+        <image name="Big Button" width="222" height="44"/>
         <image name="Small Button" width="178" height="56"/>
-        <image name="Small Button-1" width="178" height="56"/>
     </resources>
 </document>
