@@ -114,17 +114,14 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.size.height);
     }
     
+
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(375))
         if pageControl.currentPage == 3{
             playButton.isHidden = false
             infoLabel.isHidden = true
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
     }
     
     @IBAction func pauseButton(_ sender: Any) {

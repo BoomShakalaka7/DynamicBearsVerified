@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PauseViewController: UIViewController, TimerDelegate{
+class PauseViewController: UIViewController {
     var lives : [UIImageView] = []
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var backgroundView: UIImageView!
@@ -16,13 +16,15 @@ class PauseViewController: UIViewController, TimerDelegate{
     @IBOutlet weak var heart0: UIImageView!
     @IBOutlet weak var heart1: UIImageView!
     @IBOutlet weak var heart2: UIImageView!
+    var secondi: Int = 0
+    @IBOutlet weak var timerLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundView.image = snapshot
         loadBlurredImage()
         scoreLabel.text = SessionController.score.description
-                Singleton.shared.delegate = self
         lives = [heart0, heart1, heart2]
         if SessionController.lives == 3 {
             print("You have all lives")
@@ -53,7 +55,14 @@ class PauseViewController: UIViewController, TimerDelegate{
         self.backgroundView.addBlurEffect()
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if secondi < 10 {
+            timerLabel.text = "00:0\(secondi)"
+        }else{
+            timerLabel.text = "00:\(secondi)"
+        }        
+    }
     
     @IBAction func goBackToStart(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -85,30 +94,11 @@ class PauseViewController: UIViewController, TimerDelegate{
 
     
     @IBAction func buttonPressed(_ sender: Any) {
-        
-        if Singleton.shared.resumeTapped == false {
-            Singleton.shared.timer.invalidate()
-            Singleton.shared.resumeTapped = true
-        } else {
-            Singleton.shared.runTimer()
-            Singleton.shared.resumeTapped = false
-        }
+
         
         self.dismiss(animated: false, completion: nil)
-        
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func timerElapsed() {
-        
-    }
-    
-    func reset() {
-        
-    }
+
     override var prefersStatusBarHidden: Bool
     {
         return true

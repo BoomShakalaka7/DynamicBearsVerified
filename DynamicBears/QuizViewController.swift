@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
+class QuizViewController: UIViewController,UIScrollViewDelegate {
 
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -21,7 +21,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
+//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var contentWidth: CGFloat = 0.0
     var numImages = 4
     var selectedCardsMaybe : [Card]? = []
@@ -29,13 +29,12 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
     var labels = [UILabel] ()
     var gameIsStarted = true
     var nameLabel = UILabel()
+    var timer = Timer()
     
     override func viewDidLoad(){
-        Singleton.shared.delegate = self
-        Singleton.shared.runTimer()
-        
-        
         super.viewDidLoad()
+//        appDelegate.runTimer()
+        
         scrollView.delegate = self
         lives = [heart0, heart1, heart2]
         if SessionController.lives == 3 {
@@ -50,9 +49,6 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             heart1.isHighlighted=true
             heart0.isHighlighted=true
             }
-        
-        
-        
         
         selectedCards = CardController.getCardsNotOnThisLevel()
         
@@ -117,8 +113,39 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
+        runTimer()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
+    }
+    
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer() {
+        Singleton.shared.seconds -= 1
+        if Singleton.shared.seconds == 0 {
+            resetTimer()
+            let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "gameOver") as UIViewController
+            self.present(controller, animated: true, completion: nil)
+        } else {
+            if Singleton.shared.seconds < 10 {
+                timeLabel.text = "00:0\(Singleton.shared.seconds)"
+            }else{
+                timeLabel.text = "00:\(Singleton.shared.seconds)"
+            }
+        }
+    }
+    
+    func resetTimer() {
+        timer.invalidate()
+        Singleton.shared.seconds = 30
+    }
+
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(375))
@@ -127,18 +154,14 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
     
     @IBAction func pauseButton(_ sender: Any) {
 
-        if Singleton.shared.resumeTapped == false {
-            Singleton.shared.timer.invalidate()
-            Singleton.shared.resumeTapped = true
-        } else {
-            Singleton.shared.runTimer()
-            Singleton.shared.resumeTapped = false
-        }
         
+        timer.invalidate()
+       
         let img =  UIImage.init(view: mainView)
         
         let storyboard = UIStoryboard(name: "Pause", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "PauseVC") as! PauseViewController
+        controller.secondi = Singleton.shared.seconds
         controller.snapshot = img
         self.present(controller, animated: false, completion: nil)
     }
@@ -165,7 +188,9 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
                         let storyboard = UIStoryboard(name: "CardViewer", bundle: nil)
                         let controller = storyboard.instantiateViewController(withIdentifier: "CardViewerController") as UIViewController
                         SessionController.level += 1
+                        
                         SessionController.round = 1
+                        resetTimer()
                         self.present(controller, animated: true, completion: nil)
                     } else {
                         let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
@@ -222,7 +247,10 @@ class QuizViewController: UIViewController,UIScrollViewDelegate, TimerDelegate {
             }
         }
     }
-let notification = UINotificationFeedbackGenerator() //haptic feedback
+    
+    
+    
+    let notification = UINotificationFeedbackGenerator() //haptic feedback
     
     func timerElapsed() {
             if Singleton.shared.seconds < 10 {
@@ -242,7 +270,6 @@ let notification = UINotificationFeedbackGenerator() //haptic feedback
     {
         return true
     }
-    
 }
 
 
