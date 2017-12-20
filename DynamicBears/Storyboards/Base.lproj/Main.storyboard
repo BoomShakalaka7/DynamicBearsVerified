@@ -193,7 +193,7 @@
         <scene sceneID="hMk-Zp-oIm">
             <objects>
                 <viewController id="LeX-E6-FZ8" customClass="InfoScreenViewController" customModule="DynamicBears" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Roi-Tm-xbx">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Roi-Tm-xbx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

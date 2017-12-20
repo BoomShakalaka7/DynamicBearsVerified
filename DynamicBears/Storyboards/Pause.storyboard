@@ -60,7 +60,7 @@
                                 <rect key="frame" x="85" y="89" width="206" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.031372549020000001" green="0.20392156859999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QP-2z-xC5">
@@ -94,6 +94,6 @@
     </scenes>
     <resources>
         <image name="Big Button" width="222" height="44"/>
-        <image name="info-button" width="56" height="56"/>
+        <image name="info-button" width="42" height="42"/>
     </resources>
 </document>
