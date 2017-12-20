@@ -34,4 +34,9 @@ public class ScoreController {
         
     }
     
+    static func isUserNameAvailable(userName: String) -> Bool {
+        let myScores = getMyTop5Scores(userName: userName)
+        return myScores.isEmpty
+    }
+    
 }

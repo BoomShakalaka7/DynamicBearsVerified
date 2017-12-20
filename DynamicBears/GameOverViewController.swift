@@ -9,6 +9,41 @@
 import UIKit
 
 class GameOverViewController: UIViewController {
+    @IBOutlet weak var viewPickUserName: UIView!
+    
+    @IBOutlet weak var txtUserName: UITextField!
+    
+    @IBOutlet weak var lblErrorString: UILabel!
+    @IBOutlet weak var lblUserNameError: UILabel!
+    @IBOutlet weak var btnRetry: UIButton!
+    @IBOutlet weak var btnHome: UIButton!
+    @IBAction func pickUserNameButtonPress(_ sender: Any) {
+        let newUserName = txtUserName.text
+        if (newUserName != nil && !newUserName!.isEmpty && !newUserName!.contains(" ")) {
+            
+            
+            if (ScoreController.isUserNameAvailable(userName: newUserName!)) {
+                SessionController.userName = newUserName!;
+                viewPickUserName.isHidden = true;
+                btnRetry.isEnabled = true;
+                btnHome.isEnabled = true;
+                let thisScore = Score(userName: SessionController.userName!, score: SessionController.score, scoreType: 0)
+                
+                ScoreController.postScore(score: thisScore)
+                
+            } else {
+                lblErrorString.text = "This name is taken"
+            }
+            
+            
+        } else {
+            lblErrorString.text = "Please enter a valid name"
+        }
+        
+        
+    }
+    
+    
     @IBAction func retryButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CardViewer", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "CardViewerController") as UIViewController
@@ -33,6 +68,17 @@ class GameOverViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (SessionController.userName == nil) {
+            viewPickUserName.isHidden = false;
+            btnRetry.isEnabled = false;
+            btnHome.isEnabled = false;
+        } else {
+            let thisScore = Score(userName: SessionController.userName!, score: SessionController.score, scoreType: 0)
+            
+            ScoreController.postScore(score: thisScore)
+        }
+        
+        
         scoreofMatch.text! = SessionController.score.description
         
         
