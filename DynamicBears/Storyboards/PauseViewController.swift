@@ -16,7 +16,7 @@ class PauseViewController: UIViewController {
     @IBOutlet weak var heart0: UIImageView!
     @IBOutlet weak var heart1: UIImageView!
     @IBOutlet weak var heart2: UIImageView!
-    var secondi: Int!
+    var secondi: Int = 0
     @IBOutlet weak var timerLabel: UILabel!
     
     
@@ -57,7 +57,7 @@ class PauseViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        timerLabel.text = "\(secondi!)"
+        timerLabel.text = "\(secondi)"
         
     }
     
