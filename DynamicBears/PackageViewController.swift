@@ -53,7 +53,7 @@ class PackageViewController: UIViewController {
             countIm2=0
        }
     }
-   func checkPackages()->e{
+   func checkPackages(){
         if countIm==1 {
             SessionController.packetType=SessionController.PacketType.Students
         }else{

@@ -17,7 +17,7 @@ public class ServerConnection {
     static var getFile : String = "get.php";
     static var scriptGet5HighScores : String = "SELECT userName, score, scoreType FROM highScores ORDER BY score DESC LIMIT 5;";
     static func scriptGetMy5HighScores(user : String) -> (String) {
-        return "SELECT (userName, score, scoreType) FROM highScores WHERE userName = '\(user)' ORDER BY score DESC LIMIT 5;";
+        return "SELECT userName, score, scoreType FROM highScores WHERE userName = '\(user)' ORDER BY score DESC LIMIT 5;";
     }
     static func scriptPostScore(score : Score) -> String {
         return """

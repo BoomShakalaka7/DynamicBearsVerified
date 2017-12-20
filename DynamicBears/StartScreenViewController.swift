@@ -13,13 +13,13 @@ class StartScreenViewController: UIViewController {
     
 override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let cards = CardData.getAllCards()
-        
-        for card in cards {
-            print(card.name + " WORKS")
-        }
-        
+        //FOR TESTING...
+//        let cards = CardData.getAllCards()
+//
+//        for card in cards {
+//            print(card.name + " WORKS")
+//        }
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
