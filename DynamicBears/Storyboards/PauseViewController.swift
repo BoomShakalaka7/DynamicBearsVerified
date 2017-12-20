@@ -11,13 +11,15 @@ import UIKit
 class PauseViewController: UIViewController, TimerDelegate{
 
     @IBOutlet weak var scoreLabel: UILabel!
-    
-    
+    @IBOutlet weak var backgroundView: UIImageView!
+    var snapshot: UIImage!
     
     override func viewDidLoad() {
-        scoreLabel.text = SessionController.score.description
         super.viewDidLoad()
-        Singleton.shared.delegate = self
+        backgroundView.image = snapshot
+        loadBlurredImage()
+        scoreLabel.text = SessionController.score.description
+                Singleton.shared.delegate = self
         
         //        scoreLabel.text = SessionController.score.description
         // Do any additional setup after loading the view.
@@ -26,6 +28,14 @@ class PauseViewController: UIViewController, TimerDelegate{
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         Singleton.shared.delegate = nil
+    }
+    
+    func loadBlurredImage () {
+        //        let transition: CATransition = CATransition()
+        //        transition.duration = 1
+        //        transition.timingFunction = backgroundView
+        backgroundView.addBlurEffect()
+        
     }
     
     
@@ -69,7 +79,7 @@ class PauseViewController: UIViewController, TimerDelegate{
             Singleton.shared.resumeTapped = false
         }
         
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
         
     }
     override func didReceiveMemoryWarning() {
@@ -86,3 +96,17 @@ class PauseViewController: UIViewController, TimerDelegate{
     }
 
 }
+
+extension UIImageView
+{
+    func addBlurEffect()
+    {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.addSubview(blurEffectView)
+    }
+}
+

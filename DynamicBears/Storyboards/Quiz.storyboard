@@ -79,6 +79,7 @@
                         <outlet property="heart0" destination="5Ty-8e-MLl" id="mgV-G2-AII"/>
                         <outlet property="heart1" destination="5Ca-sD-nRV" id="4L6-bZ-x0R"/>
                         <outlet property="heart2" destination="2ag-ju-oyj" id="rbI-lw-Jdo"/>
+                        <outlet property="mainView" destination="qvC-d7-Peh" id="v9l-lh-Tyj"/>
                         <outlet property="pageControl" destination="1et-nK-49f" id="NPb-fG-1DB"/>
                         <outlet property="playButton" destination="Ggy-68-a3d" id="h2A-Nb-Odm"/>
                         <outlet property="scrollView" destination="eOT-Uq-WgP" id="xJe-rY-ep5"/>

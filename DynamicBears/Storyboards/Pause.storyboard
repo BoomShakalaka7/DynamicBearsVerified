@@ -23,6 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="py9-8I-83Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38q-AP-GBT">
                                 <rect key="frame" x="78" y="300" width="220" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -84,6 +88,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2eP-Z9-blJ"/>
                     <connections>
+                        <outlet property="backgroundView" destination="py9-8I-83Z" id="mvJ-S4-UBV"/>
                         <outlet property="scoreLabel" destination="0QP-2z-xC5" id="Gof-8Q-dwo"/>
                     </connections>
                 </viewController>
@@ -94,6 +99,6 @@
     </scenes>
     <resources>
         <image name="Big Button" width="222" height="44"/>
-        <image name="info-button" width="56" height="56"/>
+        <image name="info-button" width="42" height="42"/>
     </resources>
 </document>
