@@ -56,6 +56,7 @@ class GameOverViewController: UIViewController {
         SessionController.lives = 3
         SessionController.level = 1
         SessionController.round = 1
+        Singleton.shared.seconds = 30
         SessionController.newGame()
         
         
