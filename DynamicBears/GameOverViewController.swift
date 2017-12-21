@@ -26,6 +26,7 @@ class GameOverViewController: UIViewController {
                 viewPickUserName.isHidden = true;
                 btnRetry.isEnabled = true;
                 btnHome.isEnabled = true;
+                txtUserName.resignFirstResponder()
                 let thisScore = Score(userName: SessionController.userName!, score: SessionController.score, scoreType: 0)
                 
                 ScoreController.postScore(score: thisScore)
