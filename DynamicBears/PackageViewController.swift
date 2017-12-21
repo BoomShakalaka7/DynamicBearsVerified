@@ -26,10 +26,13 @@ class PackageViewController: UIViewController {
         if countIm == 1 {
             print("Students pack selected!")
             self.displayButton()
+            letsGoButton.isHidden = false
             
         }else{
             print("Students pack deselected!")
-            
+            if (countIm2 == 0) {
+                letsGoButton.isHidden = true;
+            }
         }
         
         if countIm >= images.count{
@@ -45,42 +48,54 @@ class PackageViewController: UIViewController {
         if countIm2 == 1 {
             print("Mentors pack selected!")
             self.displayButton()
+            letsGoButton.isHidden = false
         }else{
             print("Mentors pack deselected!")
-            
+            if (countIm2 == 0) {
+                letsGoButton.isHidden = true;
+            }
         }
         if countIm2 >= images.count{
             countIm2=0
        }
     }
    func checkPackages(){
-        if countIm==1 {
+        if countIm==1 && countIm2 == 1 {
+            SessionController.packetType=SessionController.PacketType.StudentsAndMentors
+        }else if countIm==1 {
             SessionController.packetType=SessionController.PacketType.Students
-        }else{
+        } else {
             SessionController.packetType=SessionController.PacketType.Mentors
-        }
-            
-        if countIm2==1{
-            SessionController.packetType=SessionController.PacketType.Mentors
-        
-        }else{
-            SessionController.packetType=SessionController.PacketType.Students
         }
     
-        
     
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkPackages()
+        //checkPackages()
+        
+        if (SessionController.packetType==SessionController.PacketType.Students) {
+            verifiedButton(self)
+           
+            
+        } else if (SessionController.packetType==SessionController.PacketType.Mentors) {
+            countIm = 0
+            verifiedButtonMentors(self)
+            
+        } else {
+            verifiedButton(self)
+            verifiedButtonMentors(self)
+            
+            
+        }
     
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.letsGoButton.alpha = 0
+        //self.letsGoButton.alpha = 0
         self.studentsCheckButton.alpha = 0
         self.mentorsCheckButton.alpha = 0
         UIView.animate(withDuration: 0.2) {
@@ -103,9 +118,13 @@ class PackageViewController: UIViewController {
             self.studentsCheckButton.alpha = 0
             self.mentorsCheckButton.alpha = 0
         }, completion: { (_) in
-            let storyboard = UIStoryboard(name: "CardViewer", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "CardViewerController") as UIViewController
-            self.present(controller, animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+//            let storyboard = UIStoryboard(name: "CardViewer", bundle: nil)
+//            let controller = storyboard.instantiateViewController(withIdentifier: "CardViewerController") as UIViewController
+//            self.present(controller, animated: true, completion: nil)
+            
+            
+            
         })
     }
     
