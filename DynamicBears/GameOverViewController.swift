@@ -80,6 +80,7 @@ class GameOverViewController: UIViewController {
             viewPickUserName.isHidden = false;
             btnRetry.isEnabled = false;
             btnHome.isEnabled = false;
+            txtUserName.becomeFirstResponder()
         } else {
             let thisScore = Score(userName: SessionController.userName!, score: SessionController.score, scoreType: 0)
             
