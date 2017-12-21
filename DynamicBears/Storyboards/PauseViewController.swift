@@ -71,6 +71,7 @@ class PauseViewController: UIViewController {
         self.present(controller, animated: false, completion: nil)
         SessionController.score=0
         SessionController.lives=3
+        Singleton.shared.seconds = 30
 //        Singleton.shared.resetButtonTapped()
     }
     @IBAction func restartGame(_ sender: Any) {
@@ -81,6 +82,7 @@ class PauseViewController: UIViewController {
         
         SessionController.score = 0
         SessionController.lives = 3
+        Singleton.shared.seconds = 30
 //        Singleton.shared.runTimer()
     }
     
