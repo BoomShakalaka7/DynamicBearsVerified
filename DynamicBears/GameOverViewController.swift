@@ -53,6 +53,8 @@ class GameOverViewController: UIViewController {
         self.present(controller, animated: false, completion: nil)
         SessionController.score = 0
         SessionController.lives = 3
+        SessionController.level = 1
+        SessionController.round = 1
         SessionController.newGame()
         
         
@@ -67,6 +69,8 @@ class GameOverViewController: UIViewController {
         SessionController.score = 0
         SessionController.newGame()
         SessionController.lives = 3
+        SessionController.level = 1
+        SessionController.round = 1
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,6 +10,7 @@ import UIKit
 
 class QuizViewController: UIViewController,UIScrollViewDelegate {
 
+    @IBOutlet weak var lblCurrRound: UILabel!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var heart0: UIImageView!
@@ -110,6 +111,13 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
         currLabel = labels.remove(at: 0)
         view.addSubview(currLabel!)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        lblCurrRound.text! += SessionController.round.description
+        UIView.animate(withDuration: 0.4, animations: {
+            self.lblCurrRound.alpha = 0
+        })
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

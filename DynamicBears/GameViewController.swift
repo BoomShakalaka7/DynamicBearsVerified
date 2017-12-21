@@ -10,6 +10,8 @@ import UIKit
 
 class GameViewController: UIViewController, UIScrollViewDelegate {
   
+    @IBOutlet weak var lblCurrLevel: UILabel!
+    @IBOutlet weak var viewLevelTransition: UIView!
     var lives : [UIImageView] = []
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -31,6 +33,8 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+
+        lblCurrLevel.text = SessionController.level.description
         scrollView.delegate = self
 //        make play button hide
         playButton.isHidden = true
@@ -115,7 +119,15 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     }
     
 
-    
+    override func viewDidAppear(_ animated: Bool) {
+//        self.view.bringSubview(toFront: viewLevelTransition)
+               UIView.animate(withDuration: 0.4, animations: {
+           self.viewLevelTransition.alpha = 0
+        })
+//        UIView.animate(withDuration: 0.2, animations: {
+//            self.viewLevelTransition.alpha = 0
+//        })
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(375))
         if pageControl.currentPage == 3{

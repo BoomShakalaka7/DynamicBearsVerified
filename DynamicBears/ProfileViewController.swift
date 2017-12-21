@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var lblUserName: UILabel!
     override func viewDidLoad() {
+        viewLoadingScores.layer.borderColor = UIColor.blue.cgColor
+        viewLoadingScores.layer.borderWidth = 1
         super.viewDidLoad()
         if (SessionController.userName == nil) {
             profileView.isHidden = true;

@@ -14,6 +14,9 @@
             <string>Helvetica</string>
             <string>Helvetica-LightOblique</string>
         </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Game View Controller-->
@@ -85,6 +88,27 @@ to start the game.</string>
                                 <color key="textColor" red="0.031372549020000001" green="0.20392156859999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-OB-B7s">
+                                <rect key="frame" x="17" y="85" width="342" height="476"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LEVEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLH-Ku-4IG">
+                                        <rect key="frame" x="70" y="42" width="203" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hO-Hr-0w8">
+                                        <rect key="frame" x="70" y="94" width="203" height="330"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="200"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16794703899999999" green="0.39616969229999999" blue="0.58439612389999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.51764705882352935" green="0.61960784313725492" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="M3D-Kk-dFi"/>
@@ -94,10 +118,12 @@ to start the game.</string>
                         <outlet property="heart1" destination="AHf-SU-dOX" id="Cdn-i3-2sK"/>
                         <outlet property="heart2" destination="Js2-jd-eTD" id="jc5-Er-pGk"/>
                         <outlet property="infoLabel" destination="yF4-G0-hF8" id="NRR-Vw-d1y"/>
+                        <outlet property="lblCurrLevel" destination="2hO-Hr-0w8" id="OVt-Pv-qyd"/>
                         <outlet property="mainView" destination="ZYU-2P-BoW" id="bGx-YR-mgn"/>
                         <outlet property="pageControl" destination="L9M-VE-nEa" id="zjr-eN-v2L"/>
                         <outlet property="playButton" destination="Cdw-0Y-7K5" id="OiN-yX-Zzb"/>
                         <outlet property="scrollView" destination="Vlw-Vs-3bh" id="7rQ-6b-sla"/>
+                        <outlet property="viewLevelTransition" destination="LG8-OB-B7s" id="Km0-HY-pEX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiw-X9-FdC" userLabel="First Responder" sceneMemberID="firstResponder"/>

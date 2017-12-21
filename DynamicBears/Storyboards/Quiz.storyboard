@@ -13,6 +13,9 @@
         <array key="Helvetica.ttc">
             <string>Helvetica</string>
         </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Quiz View Controller-->
@@ -71,6 +74,13 @@
                                 <color key="textColor" red="0.031372549019607843" green="0.20392156862745098" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Round " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBz-iL-T0O">
+                                <rect key="frame" x="107" y="17" width="167" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="27"/>
+                                <color key="textColor" red="0.031372549020000001" green="0.20392156859999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kjV-5N-Gm9"/>
@@ -79,6 +89,7 @@
                         <outlet property="heart0" destination="5Ty-8e-MLl" id="mgV-G2-AII"/>
                         <outlet property="heart1" destination="5Ca-sD-nRV" id="4L6-bZ-x0R"/>
                         <outlet property="heart2" destination="2ag-ju-oyj" id="rbI-lw-Jdo"/>
+                        <outlet property="lblCurrRound" destination="VBz-iL-T0O" id="KqQ-HF-gAv"/>
                         <outlet property="mainView" destination="qvC-d7-Peh" id="v9l-lh-Tyj"/>
                         <outlet property="pageControl" destination="1et-nK-49f" id="NPb-fG-1DB"/>
                         <outlet property="playButton" destination="Ggy-68-a3d" id="h2A-Nb-Odm"/>

@@ -71,6 +71,8 @@ class PauseViewController: UIViewController {
         self.present(controller, animated: false, completion: nil)
         SessionController.score=0
         SessionController.lives=3
+        SessionController.level = 1
+        SessionController.round = 1
         Singleton.shared.seconds = 30
 //        Singleton.shared.resetButtonTapped()
     }
@@ -82,6 +84,8 @@ class PauseViewController: UIViewController {
         
         SessionController.score = 0
         SessionController.lives = 3
+        SessionController.level = 1
+        SessionController.round = 1
         Singleton.shared.seconds = 30
 //        Singleton.shared.runTimer()
     }
