@@ -51,7 +51,7 @@ class PackageViewController: UIViewController {
             letsGoButton.isHidden = false
         }else{
             print("Mentors pack deselected!")
-            if (countIm2 == 0) {
+            if (countIm == 0) {
                 letsGoButton.isHidden = true;
             }
         }

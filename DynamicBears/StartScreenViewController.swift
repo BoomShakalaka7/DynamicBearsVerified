@@ -44,6 +44,7 @@ class StartScreenViewController: UIViewController {
     
     
     @IBAction func startButton(_ sender: Any) {
+        SessionController.newGame()
         let storyboard = UIStoryboard(name: "CardViewer", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "CardViewerController") as UIViewController
         self.present(controller, animated: true, completion: nil)

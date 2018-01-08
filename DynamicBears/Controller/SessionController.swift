@@ -44,7 +44,7 @@ public class SessionController {
     
     
     
-    static private var cardsNotUsed : [Card] = CardData.getGameCards()
+    static private var cardsNotUsed : [Card] = CardData.getGameCards(SessionController.packetType)
     
     internal static var cardsBeingPlayed : [Card] = []
     static var cardsNotPlayedThisLevel : [Card] = []
@@ -105,7 +105,7 @@ public class SessionController {
     public static func newGame() {
         
         
-        cardsNotUsed = CardData.getGameCards()
+        cardsNotUsed = CardData.getGameCards(SessionController.packetType)
         cardsBeingPlayed = []
     }
     

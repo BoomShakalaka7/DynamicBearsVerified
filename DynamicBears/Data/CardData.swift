@@ -21,12 +21,12 @@ public class CardData {
     
     
     ///getCards, returns all cards in cardData
-    public static func getGameCards() -> [Card] {
+    public static func getGameCards(_ packetType : SessionController.PacketType) -> [Card] {
         var retData : [Card] = []
-        if (SessionController.packetType == SessionController.PacketType.Mentors) {
+        if (packetType == SessionController.PacketType.Mentors) {
             retData = mentorData
         }
-        else if (SessionController.packetType == SessionController.PacketType.Students) {
+        else if (packetType == SessionController.PacketType.Students) {
             retData = studentData
         }
         else {
