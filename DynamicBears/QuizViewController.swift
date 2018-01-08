@@ -113,7 +113,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         lblCurrRound.text! += SessionController.round.description
-        UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.6, animations: {
             self.lblCurrRound.alpha = 0
         })
     }

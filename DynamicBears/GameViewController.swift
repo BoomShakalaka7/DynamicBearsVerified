@@ -121,7 +121,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
 //        self.view.bringSubview(toFront: viewLevelTransition)
-               UIView.animate(withDuration: 0.4, animations: {
+               UIView.animate(withDuration: 0.8, animations: {
            self.viewLevelTransition.alpha = 0
         })
 //        UIView.animate(withDuration: 0.2, animations: {
