@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  CardViewerViewController.swift
 //  DynamicBears
 //
 //  Created by Davide Maimone on 04/12/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController, UIScrollViewDelegate {
+class CardViewerViewController: UIViewController, UIScrollViewDelegate {
   
     @IBOutlet weak var lblCurrLevel: UILabel!
     @IBOutlet weak var viewLevelTransition: UIView!
@@ -29,6 +29,9 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
     var labels = [UILabel] ()
     var gameIsStarted = false
     var nameLabel = UILabel()
+    
+    // Top Constraints
+    @IBOutlet var topConstraints: [NSLayoutConstraint]!
     
     
     override func viewDidLoad(){
@@ -67,13 +70,16 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
         pageControl.numberOfPages = selectedCards.count
         //        pageControl.currentPage = (SessionController.level - 1) * 3
         var index = 0
-        
         for card in selectedCards {
+            
+            let imageWidth : CGFloat = 375*0.945
             let xCoordinate = view.frame.midX + view.frame.width * CGFloat(index)
+            let yCoordinate = view.frame.midY
             contentWidth += view.frame.width
+            let ratio = self.view.frame.height
             
             
-            //Shadow
+            //            //Shadow
             //            let shadow = UIImageView(image: #imageLiteral(resourceName: "cardShadow"))
             //            shadow.frame = CGRect(x: xCoordinate-187.5, y: (view.frame.height/2)-333, width: 375, height: 520)
             //            scrollView.addSubview(shadow)
@@ -82,9 +88,13 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             let imageToDisplay = card.photo
             let imageView = UIImageView(image: imageToDisplay)
             scrollView.addSubview(imageView)
-            imageView.frame = CGRect(x: xCoordinate-177.3, y: (view.frame.height/2)-326, width: 375*0.945, height: 520*0.965)
+            let imageHeight : CGFloat = 520*0.965
+            let imageY : CGFloat = (ratio / 2) - (ratio / 2.046)
+            let imageY2 : CGFloat = (ratio / 2) - (imageHeight / 2)
+            imageView.frame = CGRect(x: xCoordinate - imageWidth / 2, y:0, width: imageWidth, height: imageHeight)
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 15
+            
             
             //Black Gradient
             let gradient = UIImageView(image: #imageLiteral(resourceName: "cardGradient"))
@@ -94,12 +104,13 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             imageView.addSubview(gradient)
             
             
-            // Name and surname label
-            let nameLabel = UILabel(frame: CGRect(x: 28, y: 418, width: 320, height: 30))
+            //            // Name and surname label
+            
+            let nameLabel = UILabel(frame: CGRect(x: 38, y: 488, width: 320, height: 30))
             nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
             nameLabel.textColor = UIColor.white
             nameLabel.text = "\(card.name) \(card.surname)"
-            imageView.addSubview(nameLabel)
+            //            imageView.addSubview(nameLabel)
             labels.append(nameLabel)
             
             
@@ -110,12 +121,30 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
             jobLabel.textColor = UIColor.white
             jobLabel.text = card.description
             imageView.addSubview(jobLabel)
-            labels.append(jobLabel)
+            //            labels.append(jobLabel)
             
             
             index = index+1
         }
-        scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.size.height);
+        scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.size.height)
+        
+        // bug for iPhoneX
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            let topPadding = window?.safeAreaInsets.top
+            
+            for i in 0..<topConstraints.count {
+                let new: NSLayoutConstraint = topConstraints[i]
+                new.constant = topConstraints[i].constant + topPadding!
+                topConstraints[i] = new
+                
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
 
@@ -129,7 +158,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate {
 //        })
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(375))
+        pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(self.view.frame.width))
         if pageControl.currentPage == 3{
             playButton.isHidden = false
             infoLabel.isHidden = true
@@ -175,9 +204,3 @@ extension UIImage{
         self.init(cgImage: (image?.cgImage)!)
     }
 }
-//    var score  : Score = Score(userName: SessionController.userName!, score: 0, scoreType: 0)
-//    ScoreController.postScore(score: score)
-    
-    
-    
-    

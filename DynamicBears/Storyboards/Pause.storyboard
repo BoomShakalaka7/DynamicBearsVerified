@@ -23,78 +23,129 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="py9-8I-83Z">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="py9-8I-83Z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="Wss-lc-Zd5">
-                                <rect key="frame" x="17" y="22" width="24" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="2Ld-zL-NjZ">
-                                <rect key="frame" x="47" y="22" width="24" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="RKL-Ic-iS1">
-                                <rect key="frame" x="77" y="22" width="24" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38q-AP-GBT">
-                                <rect key="frame" x="78" y="300" width="220" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                <state key="normal" title="Resume" backgroundImage="Big Button">
-                                    <color key="titleColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="jWY-FR-QtJ" eventType="touchUpInside" id="Bh9-Ns-TKG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QF-0G-IQG">
-                                <rect key="frame" x="78" y="428" width="220" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                <state key="normal" title="Main Menu" backgroundImage="Big Button">
-                                    <color key="titleColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="goBackToStart:" destination="jWY-FR-QtJ" eventType="touchUpInside" id="pHq-xC-aJR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsH-Iq-msp">
-                                <rect key="frame" x="78" y="364" width="220" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                <state key="normal" title="Restart" backgroundImage="Big Button">
-                                    <color key="titleColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="restartGame:" destination="jWY-FR-QtJ" eventType="touchUpInside" id="MCe-UR-apI"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QP-2z-xC5">
-                                <rect key="frame" x="60" y="163" width="262" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="29n-04-J5S">
+                                <rect key="frame" x="78" y="308.5" width="220" height="170"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38q-AP-GBT">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="NMw-sX-jny"/>
+                                            <constraint firstAttribute="width" constant="220" id="mwj-lm-56n"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                        <state key="normal" title="Resume" backgroundImage="Big Button">
+                                            <color key="titleColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="jWY-FR-QtJ" eventType="touchUpInside" id="Bh9-Ns-TKG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsH-Iq-msp">
+                                        <rect key="frame" x="0.0" y="64" width="220" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="NJe-iD-d1P"/>
+                                            <constraint firstAttribute="height" constant="42" id="b3j-GP-PB5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                        <state key="normal" title="Restart" backgroundImage="Big Button">
+                                            <color key="titleColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="restartGame:" destination="jWY-FR-QtJ" eventType="touchUpInside" id="MCe-UR-apI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QF-0G-IQG">
+                                        <rect key="frame" x="0.0" y="128" width="220" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="GIC-3o-Uuy"/>
+                                            <constraint firstAttribute="height" constant="42" id="Mf8-hp-9zc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                        <state key="normal" title="Main Menu" backgroundImage="Big Button">
+                                            <color key="titleColor" red="0.98431372549999996" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goBackToStart:" destination="jWY-FR-QtJ" eventType="touchUpInside" id="pHq-xC-aJR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QP-2z-xC5">
+                                <rect key="frame" x="56.5" y="163" width="262" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="V4V-4s-rh9"/>
+                                    <constraint firstAttribute="width" constant="262" id="sZE-ea-KO1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CURRENT SCORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEl-qh-CtQ">
-                                <rect key="frame" x="60" y="103" width="262" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT SCORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEl-qh-CtQ">
+                                <rect key="frame" x="56.5" y="103" width="262" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="RrA-Gf-BLu"/>
+                                    <constraint firstAttribute="width" constant="262" id="inM-pi-xqH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCk-7E-oId">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCk-7E-oId">
                                 <rect key="frame" x="126" y="16" width="122" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="VmE-8b-sJ6"/>
+                                    <constraint firstAttribute="width" constant="122" id="fAj-z1-zkJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="34"/>
                                 <color key="textColor" red="0.031372549020000001" green="0.20392156859999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="Wss-lc-Zd5">
+                                <rect key="frame" x="16" y="19" width="27" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="KeH-sW-Rk6"/>
+                                    <constraint firstAttribute="width" constant="27" id="wCP-50-dAN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="2Ld-zL-NjZ">
+                                <rect key="frame" x="48" y="19" width="27" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="Me2-hB-Bkh"/>
+                                    <constraint firstAttribute="height" constant="27" id="rsa-V4-2X6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartfull" highlightedImage="like-heart-symbol-of-ios-7-interface_318-36651" translatesAutoresizingMaskIntoConstraints="NO" id="RKL-Ic-iS1">
+                                <rect key="frame" x="80" y="19" width="27" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="Lvf-bf-Ot4"/>
+                                    <constraint firstAttribute="height" constant="27" id="hcX-JY-ByL"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="qCk-7E-oId" firstAttribute="top" secondItem="kLI-wt-CHi" secondAttribute="top" constant="16" id="5go-qs-EnV"/>
+                            <constraint firstItem="py9-8I-83Z" firstAttribute="trailing" secondItem="aAc-cm-y4f" secondAttribute="trailing" id="6Zd-17-HWI"/>
+                            <constraint firstItem="qCk-7E-oId" firstAttribute="centerX" secondItem="kLI-wt-CHi" secondAttribute="centerX" id="8YD-fH-id6"/>
+                            <constraint firstItem="Wss-lc-Zd5" firstAttribute="leading" secondItem="aAc-cm-y4f" secondAttribute="leading" constant="16" id="8aq-S8-l6G"/>
+                            <constraint firstItem="0QP-2z-xC5" firstAttribute="centerX" secondItem="kLI-wt-CHi" secondAttribute="centerX" id="8hC-lv-jWU"/>
+                            <constraint firstItem="RKL-Ic-iS1" firstAttribute="top" secondItem="kLI-wt-CHi" secondAttribute="top" constant="19" id="90F-Ra-EjA"/>
+                            <constraint firstItem="29n-04-J5S" firstAttribute="centerX" secondItem="kLI-wt-CHi" secondAttribute="centerX" id="AjZ-He-vWu"/>
+                            <constraint firstItem="bEl-qh-CtQ" firstAttribute="centerX" secondItem="kLI-wt-CHi" secondAttribute="centerX" id="L5w-1H-heT"/>
+                            <constraint firstItem="py9-8I-83Z" firstAttribute="top" secondItem="kLI-wt-CHi" secondAttribute="top" id="QsT-Xf-mHt"/>
+                            <constraint firstItem="2Ld-zL-NjZ" firstAttribute="top" secondItem="kLI-wt-CHi" secondAttribute="top" constant="19" id="Zvo-BX-6So"/>
+                            <constraint firstItem="py9-8I-83Z" firstAttribute="bottom" secondItem="aAc-cm-y4f" secondAttribute="bottom" id="bQg-CP-9hz"/>
+                            <constraint firstItem="Wss-lc-Zd5" firstAttribute="top" secondItem="kLI-wt-CHi" secondAttribute="top" constant="19" id="d9D-cd-mOJ"/>
+                            <constraint firstItem="bEl-qh-CtQ" firstAttribute="top" secondItem="qCk-7E-oId" secondAttribute="bottom" constant="49" id="fQ7-ZL-k5l"/>
+                            <constraint firstItem="RKL-Ic-iS1" firstAttribute="leading" secondItem="2Ld-zL-NjZ" secondAttribute="trailing" constant="5" id="fUu-Pk-tQH"/>
+                            <constraint firstItem="0QP-2z-xC5" firstAttribute="top" secondItem="qCk-7E-oId" secondAttribute="bottom" constant="109" id="gLK-5x-2DP"/>
+                            <constraint firstItem="2Ld-zL-NjZ" firstAttribute="leading" secondItem="Wss-lc-Zd5" secondAttribute="trailing" constant="5" id="jGf-Pe-BXZ"/>
+                            <constraint firstItem="29n-04-J5S" firstAttribute="centerY" secondItem="kLI-wt-CHi" secondAttribute="centerY" constant="60" id="jQd-Cd-5xe"/>
+                            <constraint firstItem="py9-8I-83Z" firstAttribute="leading" secondItem="aAc-cm-y4f" secondAttribute="leading" id="yuB-Zb-r7g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aAc-cm-y4f"/>
                     </view>
                     <navigationItem key="navigationItem" id="2eP-Z9-blJ"/>
@@ -105,6 +156,10 @@
                         <outlet property="heart2" destination="RKL-Ic-iS1" id="FuS-eT-WEl"/>
                         <outlet property="scoreLabel" destination="0QP-2z-xC5" id="Gof-8Q-dwo"/>
                         <outlet property="timerLabel" destination="qCk-7E-oId" id="ykF-SQ-Tuw"/>
+                        <outletCollection property="topConstraints" destination="d9D-cd-mOJ" collectionClass="NSMutableArray" id="mEj-qB-91v"/>
+                        <outletCollection property="topConstraints" destination="Zvo-BX-6So" collectionClass="NSMutableArray" id="qLf-mW-pMj"/>
+                        <outletCollection property="topConstraints" destination="90F-Ra-EjA" collectionClass="NSMutableArray" id="C9y-1i-V3V"/>
+                        <outletCollection property="topConstraints" destination="5go-qs-EnV" collectionClass="NSMutableArray" id="Jct-ZW-Rto"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ua-m8-2Lr" userLabel="First Responder" sceneMemberID="firstResponder"/>

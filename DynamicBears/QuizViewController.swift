@@ -22,6 +22,9 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    // Top Constraint
+    @IBOutlet var topContraints: [NSLayoutConstraint]!
+    
 //    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var contentWidth: CGFloat = 0.0
     var numImages = 4
@@ -34,8 +37,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-//        appDelegate.runTimer()
-        
+
         scrollView.delegate = self
         lives = [heart0, heart1, heart2]
         if SessionController.lives == 3 {
@@ -56,10 +58,13 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
         pageControl.numberOfPages = selectedCards.count
         
         var index = 0
-        
         for card in selectedCards {
+            
+            let imageWidth : CGFloat = 375*0.945
             let xCoordinate = view.frame.midX + view.frame.width * CGFloat(index)
+//            let yCoordinate = view.frame.midY
             contentWidth += view.frame.width
+//            let ratio = self.view.frame.height
             
             
             //            //Shadow
@@ -70,10 +75,16 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
             //Image
             let imageToDisplay = card.photo
             let imageView = UIImageView(image: imageToDisplay)
-            scrollView.addSubview(imageView)
-            imageView.frame = CGRect(x: xCoordinate-177.3, y: (view.frame.height/2)-326, width: 375*0.945, height: 520*0.965)
+            
+            let imageHeight : CGFloat = 520*0.965
+//            let imageY : CGFloat = (ratio / 2) - (ratio / 2.046)
+//            let imageY2 : CGFloat = (ratio / 2) - (imageHeight / 2)
+            imageView.frame = CGRect(x: xCoordinate - imageWidth / 2, y:0, width: imageWidth, height: imageHeight)
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 15
+            
+            scrollView.addSubview(imageView)
+            
             
             //Black Gradient
             let gradient = UIImageView(image: #imageLiteral(resourceName: "cardGradient"))
@@ -110,6 +121,19 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
         labels = labels.shuffle
         currLabel = labels.remove(at: 0)
         view.addSubview(currLabel!)
+        
+        // bug for iPhoneX
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            let topPadding = window?.safeAreaInsets.top
+            
+            for i in 0..<topContraints.count {
+                let new: NSLayoutConstraint = topContraints[i]
+                new.constant = topContraints[i].constant + topPadding!
+                topContraints[i] = new
+                
+            }
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         lblCurrRound.text! += SessionController.round.description
@@ -122,6 +146,7 @@ class QuizViewController: UIViewController,UIScrollViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         runTimer()
+    
     }
     
     override func viewWillDisappear(_ animated: Bool) {

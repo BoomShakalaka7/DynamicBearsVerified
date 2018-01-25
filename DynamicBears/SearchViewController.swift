@@ -26,8 +26,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         navigationItem.searchController = searchController
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = false
-        
-        }
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -112,7 +112,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        switch UIScreen.main.bounds.width {
+        case 1024, 834:
+            return 240
+        default:
+            return 120
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -19,6 +19,10 @@ class PauseViewController: UIViewController {
     var secondi: Int = 0
     @IBOutlet weak var timerLabel: UILabel!
     
+    // Top Constraints
+    @IBOutlet var topConstraints: [NSLayoutConstraint]!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,24 @@ class PauseViewController: UIViewController {
         
         //        scoreLabel.text = SessionController.score.description
         // Do any additional setup after loading the view.
+        
+        // bug for iPhoneX
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            let topPadding = window?.safeAreaInsets.top
+            
+            for i in 0..<topConstraints.count {
+                let new: NSLayoutConstraint = topConstraints[i]
+                new.constant = topConstraints[i].constant + topPadding!
+                topConstraints[i] = new
+                
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

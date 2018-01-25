@@ -24,56 +24,50 @@ public class UIBuilder {
     public static func buildRoundCards(view : UIView, scrollView : UIScrollView, selectedCards: [Card], contentWidth: inout CGFloat, labels: inout [UILabel]) {
         
         for (index,card) in selectedCards.enumerated() {
-        let xCoordinate = view.frame.midX + view.frame.width * CGFloat(index)
-        contentWidth += view.frame.width
-        
-        
-//        //Shadow
-//        let shadow = UIImageView(image: #imageLiteral(resourceName: "cardShadow"))
-//        shadow.frame = CGRect(x: xCoordinate-187.5, y: (view.frame.height/2)-333, width: 375, height: 520)
-//        scrollView.addSubview(shadow)
-        
-        //Image
-        let imageToDisplay = card.photo
-        let imageView = UIImageView(image: imageToDisplay)
-        scrollView.addSubview(imageView)
-        imageView.frame = CGRect(x: xCoordinate-177.3, y: (view.frame.height/2)-326, width: 375*0.945, height: 520*0.965)
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 15
-        
-        //Black Gradient
-        let gradient = UIImageView(image: #imageLiteral(resourceName: "cardGradient"))
-        gradient.frame = CGRect(x: -1, y: 368, width: 375*0.96, height: 142)
-        gradient.clipsToBounds = true
-        gradient.layer.cornerRadius = 15
-        imageView.addSubview(gradient)
-        
-        
-        //            // Name and surname label
-        
-        
-        
-        let nameLabel = UILabel(frame: CGRect(x: 38, y: 488, width: 320, height: 30))
-        nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
-        nameLabel.textColor = UIColor.white
-        nameLabel.text = "\(card.name) \(card.surname)"
-        //            imageView.addSubview(nameLabel)
-        labels.append(nameLabel)
-        
-        
-        
-        // Job label
-        let jobLabel = UILabel(frame: CGRect(x: 28, y: 455, width: 320, height: 30))
-        jobLabel.font = UIFont.systemFont(ofSize: 22.0, weight: .light)
-        jobLabel.textColor = UIColor.white
-        jobLabel.text = card.description
-        imageView.addSubview(jobLabel)
-        //            labels.append(jobLabel)
-        
-        
-    }
-    scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.size.height);
-    labels = labels.shuffle
+            let xCoordinate = view.frame.midX + view.frame.width * CGFloat(index)
+            contentWidth += view.frame.width
+
+            //Image
+            let imageToDisplay = card.photo
+            let imageView = UIImageView(image: imageToDisplay)
+            scrollView.addSubview(imageView)
+            imageView.frame = CGRect(x: xCoordinate-177.3, y: (view.frame.height/2)-326, width: 375*0.945, height: 520*0.965)
+            imageView.clipsToBounds = true
+            imageView.layer.cornerRadius = 15
+            
+            //Black Gradient
+            let gradient = UIImageView(image: #imageLiteral(resourceName: "cardGradient"))
+            gradient.frame = CGRect(x: -1, y: 368, width: 375*0.96, height: 142)
+            gradient.clipsToBounds = true
+            gradient.layer.cornerRadius = 15
+            imageView.addSubview(gradient)
+            
+            
+            //            // Name and surname label
+            
+            
+            
+            let nameLabel = UILabel(frame: CGRect(x: 38, y: 488, width: 320, height: 30))
+            nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
+            nameLabel.textColor = UIColor.white
+            nameLabel.text = "\(card.name) \(card.surname)"
+            //            imageView.addSubview(nameLabel)
+            labels.append(nameLabel)
+            
+            
+            
+            // Job label
+            let jobLabel = UILabel(frame: CGRect(x: 28, y: 455, width: 320, height: 30))
+            jobLabel.font = UIFont.systemFont(ofSize: 22.0, weight: .light)
+            jobLabel.textColor = UIColor.white
+            jobLabel.text = card.description
+            imageView.addSubview(jobLabel)
+            //            labels.append(jobLabel)
+            
+            
+        }
+        scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.size.height);
+        labels = labels.shuffle
     }
     
 }

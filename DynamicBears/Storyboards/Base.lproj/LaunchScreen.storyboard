@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,11 +23,19 @@
                                 <rect key="frame" x="177" y="573" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone 8" translatesAutoresizingMaskIntoConstraints="NO" id="xRO-iJ-e72">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone 8" translatesAutoresizingMaskIntoConstraints="NO" id="xRO-iJ-e72">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xRO-iJ-e72" secondAttribute="height" multiplier="375:667" id="9XW-p5-Pso"/>
+                                </constraints>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xRO-iJ-e72" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8tH-Bh-34j"/>
+                            <constraint firstItem="xRO-iJ-e72" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="KHs-BR-71p"/>
+                            <constraint firstItem="xRO-iJ-e72" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KvD-gm-aQ0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

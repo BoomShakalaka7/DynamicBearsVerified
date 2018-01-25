@@ -19,8 +19,13 @@ class PackageViewController: UIViewController {
     @IBOutlet weak var letsGoButton: UIButton!
     let whatPackage : [String] = [ "You have selected the mentors package","You have selected the students package","You have selected the students and mentors package","No package included" ]
     
+    @IBOutlet var constraintForiPad: [NSLayoutConstraint]!
+    
+
+    
     @IBAction func verifiedButton(_ sender: Any) {
-        studentsCheckButton.setImage(images[countIm % images.count], for: .normal)
+//        studentsCheckButton.setImage(images[countIm % images.count], for: .normal)
+        studentsCheckButton.setBackgroundImage(images[countIm % images.count], for: .normal)
         notification.notificationOccurred(.success) //haptic feedback
         countIm+=1
         if countIm == 1 {
@@ -42,7 +47,8 @@ class PackageViewController: UIViewController {
     }
     
     @IBAction func verifiedButtonMentors(_ sender: Any) {
-        mentorsCheckButton.setImage(images[countIm2 % images.count], for: .normal)
+//        mentorsCheckButton.setImage(images[countIm2 % images.count], for: .normal)
+        mentorsCheckButton.setBackgroundImage(images[countIm2 % images.count], for: .normal)
         notification.notificationOccurred(.success) //haptic feedback
         countIm2+=1
         if countIm2 == 1 {
@@ -101,6 +107,14 @@ class PackageViewController: UIViewController {
         UIView.animate(withDuration: 0.2) {
             self.studentsCheckButton.alpha = 1
             self.mentorsCheckButton.alpha = 1
+        }
+        
+        for i in 0..<constraintForiPad.count {
+            if i == 6 || i == 7 {
+                constraintForiPad[i].constant = 260
+            } else {
+                constraintForiPad[i].constant = 120
+            }
         }
     }
     

@@ -5,6 +5,12 @@ class StartScreenViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var heightLogo: NSLayoutConstraint!
+    @IBOutlet weak var widthLogo: NSLayoutConstraint!
+    
+    
 //
 //    @IBAction func profileShow(_ sender: Any) {
 //        performSegue(withIdentifier: "profile", sender: self)
@@ -29,6 +35,15 @@ class StartScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        
+        switch UIScreen.main.bounds.width {
+        case 834, 1024:
+            self.topConstraint.constant = 200
+            self.heightLogo.constant = 354
+            self.widthLogo.constant = 200
+        default:
+            break
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

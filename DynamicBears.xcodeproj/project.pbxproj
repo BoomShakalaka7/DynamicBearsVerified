@@ -26,7 +26,7 @@
 		4CCD15501FDEEA45006B04C3 /* RandomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD154F1FDEEA45006B04C3 /* RandomHelper.swift */; };
 		6B04D00B1FE3C989004FACE7 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04D00A1FE3C989004FACE7 /* LaunchScreenViewController.swift */; };
 		6B3F33811FDFE4460054F7F3 /* CardViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3F33801FDFE4460054F7F3 /* CardViewer.storyboard */; };
-		6B44DBF81FD5C7C40094892C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B44DBF71FD5C7C40094892C /* GameViewController.swift */; };
+		6B44DBF81FD5C7C40094892C /* CardViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B44DBF71FD5C7C40094892C /* CardViewerViewController.swift */; };
 		6B44DBFB1FD5D2700094892C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B44DBFA1FD5D2570094892C /* CoreMotion.framework */; };
 		6B4FB3711FD55FF900776367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FB3701FD55FF900776367 /* AppDelegate.swift */; };
 		6B4FB3761FD55FF900776367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4FB3741FD55FF900776367 /* Main.storyboard */; };
@@ -35,6 +35,8 @@
 		6B4FB3911FD55FF900776367 /* DynamicBearsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FB3901FD55FF900776367 /* DynamicBearsUITests.swift */; };
 		6B95C0101FD8181A00CB7698 /* PackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B95C00F1FD8181A00CB7698 /* PackageViewController.swift */; };
 		6B95C0141FD82CEA00CB7698 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B95C0131FD82CEA00CB7698 /* Singleton.swift */; };
+		6B9FB1E12011F2660037323B /* CenteredCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9FB1E02011F2650037323B /* CenteredCollectionViewFlowLayout.swift */; };
+		6B9FB1E32012004E0037323B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9FB1E22012004E0037323B /* CollectionViewCell.swift */; };
 		6BB1A5A11FE5216200423D5D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB1A5A01FE5216200423D5D /* DetailViewController.swift */; };
 		6BCD56C21FD5644D00701F00 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD56C11FD5644D00701F00 /* StartScreenViewController.swift */; };
 		6BCEAD3C1FE1E93C007B88E8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD3B1FE1E93C007B88E8 /* SearchViewController.swift */; };
@@ -84,7 +86,7 @@
 		4CCD154F1FDEEA45006B04C3 /* RandomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomHelper.swift; sourceTree = "<group>"; };
 		6B04D00A1FE3C989004FACE7 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		6B3F33801FDFE4460054F7F3 /* CardViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardViewer.storyboard; sourceTree = "<group>"; };
-		6B44DBF71FD5C7C40094892C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		6B44DBF71FD5C7C40094892C /* CardViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewerViewController.swift; sourceTree = "<group>"; };
 		6B44DBFA1FD5D2570094892C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		6B4FB36D1FD55FF900776367 /* DynamicBears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicBears.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4FB3701FD55FF900776367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,8 @@
 		6B4FB3921FD55FF900776367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B95C00F1FD8181A00CB7698 /* PackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageViewController.swift; sourceTree = "<group>"; };
 		6B95C0131FD82CEA00CB7698 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		6B9FB1E02011F2650037323B /* CenteredCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		6B9FB1E22012004E0037323B /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		6BB1A5A01FE5216200423D5D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6BCD56C11FD5644D00701F00 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		6BCEAD3B1FE1E93C007B88E8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -244,9 +248,11 @@
 				1D1DB93B1FE8592700CE1F56 /* ProfileViewController.swift */,
 				4CA247161FE3BD9100494A63 /* QuizViewController.swift */,
 				1D1DB93D1FE8594C00CE1F56 /* AcademyViewController.swift */,
-				6B44DBF71FD5C7C40094892C /* GameViewController.swift */,
+				6B44DBF71FD5C7C40094892C /* CardViewerViewController.swift */,
 				6B95C00F1FD8181A00CB7698 /* PackageViewController.swift */,
 				1DF9CF291FE4274E004A40DB /* creditsViewController.swift */,
+				6B9FB1E02011F2650037323B /* CenteredCollectionViewFlowLayout.swift */,
+				6B9FB1E22012004E0037323B /* CollectionViewCell.swift */,
 				E32598E71FEABDB700C18B58 /* Mentors.bundle */,
 				E32598E51FEABDAE00C18B58 /* Students.bundle */,
 				6B3F33821FDFE4660054F7F3 /* Storyboards */,
@@ -426,15 +432,17 @@
 				E3D0E1411FE932C000E5CC15 /* InfoScreenViewController.swift in Sources */,
 				4C6641FE1FE01C33007A0BB9 /* ImagesHelper.swift in Sources */,
 				4C9E8BF41FDD5E9800B1621B /* ScoreController.swift in Sources */,
+				6B9FB1E12011F2660037323B /* CenteredCollectionViewFlowLayout.swift in Sources */,
 				6B95C0101FD8181A00CB7698 /* PackageViewController.swift in Sources */,
 				4CA247171FE3BD9100494A63 /* QuizViewController.swift in Sources */,
 				4C2586881FD9BDF600DA1EAD /* Card.swift in Sources */,
 				4CA247131FE39D3700494A63 /* UIBuilder.swift in Sources */,
 				1DF9CF2A1FE4274E004A40DB /* creditsViewController.swift in Sources */,
-				6B44DBF81FD5C7C40094892C /* GameViewController.swift in Sources */,
+				6B44DBF81FD5C7C40094892C /* CardViewerViewController.swift in Sources */,
 				6B95C0141FD82CEA00CB7698 /* Singleton.swift in Sources */,
 				4C9E8BF01FD9DF9C00B1621B /* CardData.swift in Sources */,
 				4C2586861FD9BC8B00DA1EAD /* Score.swift in Sources */,
+				6B9FB1E32012004E0037323B /* CollectionViewCell.swift in Sources */,
 				F4FD9D771FDEA39300A03A85 /* FileConnection.swift in Sources */,
 				6BCD56C21FD5644D00701F00 /* StartScreenViewController.swift in Sources */,
 				F4FD9D751FDE9CAE00A03A85 /* SessionController.swift in Sources */,
@@ -611,16 +619,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LJTWGLKEZA;
+				DEVELOPMENT_TEAM = 9AUTVHJRC7;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = DynamicBears/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.DynamicBeartfh;
+				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.DynamicBearLucariello;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -629,16 +637,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LJTWGLKEZA;
+				DEVELOPMENT_TEAM = 9AUTVHJRC7;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = DynamicBears/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.DynamicBeartfh;
+				PRODUCT_BUNDLE_IDENTIFIER = org.iosda.DynamicBearLucariello;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
