@@ -493,16 +493,16 @@
                         <outlet property="lblYourTopScore" destination="onv-61-tG0" id="hHG-md-brY"/>
                         <outlet property="profileView" destination="9IC-gN-nW4" id="ncM-LI-mBa"/>
                         <outlet property="viewLoadingScores" destination="WkL-4e-LwI" id="8Tm-CU-Rz1"/>
-                        <outletCollection property="lblTopScores" destination="iG5-RO-wjD" collectionClass="NSMutableArray" id="Dop-RC-gv7"/>
-                        <outletCollection property="lblTopScores" destination="MZC-fm-vlj" collectionClass="NSMutableArray" id="15C-HS-zfV"/>
-                        <outletCollection property="lblTopNames" destination="wDg-8G-hVn" collectionClass="NSMutableArray" id="PtF-8a-2fc"/>
-                        <outletCollection property="lblTopNames" destination="HQo-ti-OL9" collectionClass="NSMutableArray" id="9HJ-XX-vnz"/>
-                        <outletCollection property="lblTopNames" destination="cDA-07-jdj" collectionClass="NSMutableArray" id="LsI-sr-ttZ"/>
-                        <outletCollection property="lblTopNames" destination="Wwf-aJ-pQi" collectionClass="NSMutableArray" id="FyL-NS-Kjs"/>
-                        <outletCollection property="lblTopScores" destination="qRi-p1-WdI" collectionClass="NSMutableArray" id="ywS-5B-zd0"/>
-                        <outletCollection property="lblTopScores" destination="0fp-Ei-9gJ" collectionClass="NSMutableArray" id="C42-Vi-oc9"/>
-                        <outletCollection property="lblTopScores" destination="qKg-dC-L9M" collectionClass="NSMutableArray" id="3D6-vT-jGv"/>
-                        <outletCollection property="lblTopNames" destination="gcc-Mg-3Oj" collectionClass="NSMutableArray" id="n5l-mg-ZEd"/>
+                        <outletCollection property="lblTopNames" destination="Wwf-aJ-pQi" collectionClass="NSMutableArray" id="xdE-hK-NNe"/>
+                        <outletCollection property="lblTopNames" destination="wDg-8G-hVn" collectionClass="NSMutableArray" id="lTg-fc-eDF"/>
+                        <outletCollection property="lblTopNames" destination="HQo-ti-OL9" collectionClass="NSMutableArray" id="rUh-lw-rtE"/>
+                        <outletCollection property="lblTopNames" destination="gcc-Mg-3Oj" collectionClass="NSMutableArray" id="RfT-P3-5ab"/>
+                        <outletCollection property="lblTopNames" destination="cDA-07-jdj" collectionClass="NSMutableArray" id="7nN-8E-uTj"/>
+                        <outletCollection property="lblTopScores" destination="0fp-Ei-9gJ" collectionClass="NSMutableArray" id="cUK-Wh-kSO"/>
+                        <outletCollection property="lblTopScores" destination="MZC-fm-vlj" collectionClass="NSMutableArray" id="GEa-lI-jCC"/>
+                        <outletCollection property="lblTopScores" destination="qKg-dC-L9M" collectionClass="NSMutableArray" id="BrR-zA-gSl"/>
+                        <outletCollection property="lblTopScores" destination="iG5-RO-wjD" collectionClass="NSMutableArray" id="on3-ca-70p"/>
+                        <outletCollection property="lblTopScores" destination="qRi-p1-WdI" collectionClass="NSMutableArray" id="Q5j-6u-l1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toS-dY-phO" userLabel="First Responder" sceneMemberID="firstResponder"/>

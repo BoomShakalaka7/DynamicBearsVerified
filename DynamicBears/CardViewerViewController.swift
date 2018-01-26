@@ -106,11 +106,11 @@ class CardViewerViewController: UIViewController, UIScrollViewDelegate {
             
             //            // Name and surname label
             
-            let nameLabel = UILabel(frame: CGRect(x: 38, y: 488, width: 320, height: 30))
+            let nameLabel = UILabel(frame: CGRect(x: 25, y: 420, width: 320, height: 30))
             nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
             nameLabel.textColor = UIColor.white
             nameLabel.text = "\(card.name) \(card.surname)"
-            //            imageView.addSubview(nameLabel)
+            imageView.addSubview(nameLabel)
             labels.append(nameLabel)
             
             

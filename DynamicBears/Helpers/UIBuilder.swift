@@ -24,16 +24,31 @@ public class UIBuilder {
     public static func buildRoundCards(view : UIView, scrollView : UIScrollView, selectedCards: [Card], contentWidth: inout CGFloat, labels: inout [UILabel]) {
         
         for (index,card) in selectedCards.enumerated() {
+            let imageWidth : CGFloat = 375*0.945
             let xCoordinate = view.frame.midX + view.frame.width * CGFloat(index)
+            //            let yCoordinate = view.frame.midY
             contentWidth += view.frame.width
-
+            //            let ratio = self.view.frame.height
+            
+            
+            //            //Shadow
+            //            let shadow = UIImageView(image: #imageLiteral(resourceName: "cardShadow"))
+            //            shadow.frame = CGRect(x: xCoordinate-187.5, y: (view.frame.height/2)-333, width: 375, height: 520)
+            //            scrollView.addSubview(shadow)
+            
             //Image
             let imageToDisplay = card.photo
             let imageView = UIImageView(image: imageToDisplay)
-            scrollView.addSubview(imageView)
-            imageView.frame = CGRect(x: xCoordinate-177.3, y: (view.frame.height/2)-326, width: 375*0.945, height: 520*0.965)
+            
+            let imageHeight : CGFloat = 520*0.965
+            //            let imageY : CGFloat = (ratio / 2) - (ratio / 2.046)
+            //            let imageY2 : CGFloat = (ratio / 2) - (imageHeight / 2)
+            imageView.frame = CGRect(x: xCoordinate - imageWidth / 2, y:0, width: imageWidth, height: imageHeight)
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 15
+            
+            scrollView.addSubview(imageView)
+            
             
             //Black Gradient
             let gradient = UIImageView(image: #imageLiteral(resourceName: "cardGradient"))
@@ -47,7 +62,7 @@ public class UIBuilder {
             
             
             
-            let nameLabel = UILabel(frame: CGRect(x: 38, y: 488, width: 320, height: 30))
+            let nameLabel = UILabel(frame: CGRect(x: scrollView.frame.minX + 28, y: scrollView.frame.minY + 420 , width: 320, height: 30))
             nameLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
             nameLabel.textColor = UIColor.white
             nameLabel.text = "\(card.name) \(card.surname)"
