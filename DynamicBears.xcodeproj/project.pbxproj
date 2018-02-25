@@ -41,8 +41,8 @@
 		6BCD56C21FD5644D00701F00 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD56C11FD5644D00701F00 /* StartScreenViewController.swift */; };
 		6BCEAD3C1FE1E93C007B88E8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEAD3B1FE1E93C007B88E8 /* SearchViewController.swift */; };
 		6BD75F9D1FE5857E00586920 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD75F9C1FE5857E00586920 /* GameOverViewController.swift */; };
-		E32598E61FEABDAE00C18B58 /* Students.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E32598E51FEABDAE00C18B58 /* Students.bundle */; };
 		E32598E81FEABDB700C18B58 /* Mentors.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E32598E71FEABDB700C18B58 /* Mentors.bundle */; };
+		E398C82820431AFA0018B68D /* Students.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E398C82720431AF90018B68D /* Students.bundle */; };
 		E3D0E1411FE932C000E5CC15 /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0E1401FE932C000E5CC15 /* InfoScreenViewController.swift */; };
 		F42E07171FDFEA4C00E77F8E /* Pause.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42E07161FDFEA4C00E77F8E /* Pause.storyboard */; };
 		F42E07191FDFEB5A00E77F8E /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E07181FDFEB5A00E77F8E /* PauseViewController.swift */; };
@@ -108,8 +108,8 @@
 		6BCD56C11FD5644D00701F00 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		6BCEAD3B1FE1E93C007B88E8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6BD75F9C1FE5857E00586920 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
-		E32598E51FEABDAE00C18B58 /* Students.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Students.bundle; sourceTree = "<group>"; };
 		E32598E71FEABDB700C18B58 /* Mentors.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Mentors.bundle; sourceTree = "<group>"; };
+		E398C82720431AF90018B68D /* Students.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Students.bundle; sourceTree = "<group>"; };
 		E3D0E1401FE932C000E5CC15 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
 		F42E07161FDFEA4C00E77F8E /* Pause.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pause.storyboard; sourceTree = "<group>"; };
 		F42E07181FDFEB5A00E77F8E /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PauseViewController.swift; path = Storyboards/PauseViewController.swift; sourceTree = "<group>"; };
@@ -253,8 +253,8 @@
 				1DF9CF291FE4274E004A40DB /* creditsViewController.swift */,
 				6B9FB1E02011F2650037323B /* CenteredCollectionViewFlowLayout.swift */,
 				6B9FB1E22012004E0037323B /* CollectionViewCell.swift */,
+				E398C82720431AF90018B68D /* Students.bundle */,
 				E32598E71FEABDB700C18B58 /* Mentors.bundle */,
-				E32598E51FEABDAE00C18B58 /* Students.bundle */,
 				6B3F33821FDFE4660054F7F3 /* Storyboards */,
 				4CCD154E1FDEEA2E006B04C3 /* Helpers */,
 				4C9E8BEC1FD9D13400B1621B /* Data */,
@@ -392,11 +392,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DA38D8A1FE8449800AF8DA7 /* GameOver.storyboard in Resources */,
-				E32598E61FEABDAE00C18B58 /* Students.bundle in Resources */,
 				6B3F33811FDFE4460054F7F3 /* CardViewer.storyboard in Resources */,
 				6B4FB37B1FD55FF900776367 /* LaunchScreen.storyboard in Resources */,
 				6B4FB3781FD55FF900776367 /* Assets.xcassets in Resources */,
 				E32598E81FEABDB700C18B58 /* Mentors.bundle in Resources */,
+				E398C82820431AFA0018B68D /* Students.bundle in Resources */,
 				4CA247151FE3BD7D00494A63 /* Quiz.storyboard in Resources */,
 				6B4FB3761FD55FF900776367 /* Main.storyboard in Resources */,
 				F42E07171FDFEA4C00E77F8E /* Pause.storyboard in Resources */,
@@ -619,7 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9AUTVHJRC7;
+				DEVELOPMENT_TEAM = R59EHF87WE;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = DynamicBears/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
@@ -637,7 +637,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9AUTVHJRC7;
+				DEVELOPMENT_TEAM = R59EHF87WE;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = DynamicBears/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
